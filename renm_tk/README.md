@@ -1,0 +1,19 @@
+<h1 style="color: magenta;">File and Directory rename tool [renm] ReadMe</h1>
+
+* 指定ディレクトリに含まれるファイル(ディレクトリ)名を一括変換します。  
+* 変換対象ディレクトリに子ディレクトリが存在する場合、含まれるファイル(ディレクトリ)  
+に対して再帰的に変換を行う事が出来ます。  
+* 指定には正規表現("^"/"$")が使用できます。
+
+|項目|内容|
+|:--|:--|
+|Exec diGrectory [ ]|処理対象ディレクトリ|
+|Before word [ ]|変換前文字列|
+|After  word [ ]|変換後文字列|
+|☑ Recursive processing|ディレクトリ階層再帰処理|
+|Result message|処理内容表示ウィンドウ|
+|[Move]|変換実行|
+|[Clear]|変換前後文字列初期化|
+|[Undo]|変換取り消し(初期状態に戻ります)|
+|[Help]|Help表示|
+|[Exit]|ツール終了|
