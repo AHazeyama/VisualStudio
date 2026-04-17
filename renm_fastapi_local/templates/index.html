@@ -1,0 +1,124 @@
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Local Rename Tool</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; margin: 24px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; }
+    label { display: block; font-size: 14px; opacity: .9; margin-bottom: 6px; }
+    input[type="text"] { width: 520px; max-width: 100%; padding: 10px; }
+    .small { width: 240px; }
+    button { padding: 10px 14px; cursor: pointer; }
+    pre { background: #111; color: #eee; padding: 12px; overflow: auto; max-height: 360px; }
+    .box { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin-top: 16px; }
+    .items { font-size: 14px; }
+    .muted { opacity: .7; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>Local Rename Tool（ローカル専用）</h1>
+  <div class="muted">※ フォルダパスを入力して実行します（アップロードなし）</div>
+
+  <div class="box">
+    <div>
+      <label>対象フォルダ（例: C:\work\target / WSLなら /mnt/c/work/target）</label>
+      <input id="dir" type="text" placeholder="対象フォルダのパス" />
+    </div>
+
+    <div class="row" style="margin-top: 12px;">
+      <div>
+        <label>置換前（正規表現OK）</label>
+        <input id="before" class="small" type="text" placeholder="before" />
+      </div>
+      <div>
+        <label>置換後</label>
+        <input id="after" class="small" type="text" placeholder="after" />
+      </div>
+      <div style="align-self:flex-end;">
+        <label style="visibility:hidden">x</label>
+        <button id="btnList">一覧表示</button>
+        <button id="btnRename">リネーム実行（バックアップ作成）</button>
+        <button id="btnUndo">UNDO（.bkから復元）</button>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 8px;">
+      <label><input id="recursive" type="checkbox" checked> サブフォルダも処理</label>
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>一覧</h3>
+    <div id="items" class="items muted">まだ未取得</div>
+  </div>
+
+  <div class="box">
+    <h3>ログ</h3>
+    <pre id="log">(ここにログが表示されます)</pre>
+  </div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+
+  function setLog(text) {
+    $("log").textContent = text;
+  }
+
+  async function postJson(url, data) {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify(data)
+    });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(json.detail || ("HTTP " + res.status));
+    }
+    return json;
+  }
+
+  $("btnList").addEventListener("click", async () => {
+    setLog("Listing...");
+    $("items").textContent = "Loading...";
+    try {
+      const dir = $("dir").value.trim();
+      const json = await postJson("/api/list", {dir});
+      const lines = json.items.map(x => (x.is_dir ? "📁 " : "📄 ") + x.name);
+      $("items").textContent = lines.length ? lines.join("\n") : "(空)";
+      setLog("OK: listed " + json.items.length + " items.");
+    } catch (e) {
+      $("items").textContent = "エラー";
+      setLog("ERROR: " + e.message);
+    }
+  });
+
+  $("btnRename").addEventListener("click", async () => {
+    setLog("Renaming... (backup will be created)");
+    try {
+      const dir = $("dir").value.trim();
+      const before = $("before").value;
+      const after  = $("after").value;
+      const recursive = $("recursive").checked;
+
+      const json = await postJson("/api/rename", {dir, before, after, recursive});
+      const logText = (json.logs || []).join("\n");
+      setLog("OK: changed " + (json.changes?.length || 0) + " items.\n\n" + logText);
+    } catch (e) {
+      setLog("ERROR: " + e.message);
+    }
+  });
+
+  $("btnUndo").addEventListener("click", async () => {
+    setLog("Undo...");
+    try {
+      const dir = $("dir").value.trim();
+      const json = await postJson("/api/undo", {dir});
+      setLog("OK: " + json.message);
+    } catch (e) {
+      setLog("ERROR: " + e.message);
+    }
+  });
+</script>
+</body>
+</html>
