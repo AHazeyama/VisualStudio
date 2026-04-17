@@ -23,6 +23,16 @@ from tkinter import StringVar
 from tkinter import BooleanVar
 from tkinter import filedialog
 from os.path import expanduser
+from pathlib import Path
+
+# Path設定
+from pathlib import Path
+
+# Path設定
+def resource_path(filename):
+	if hasattr(sys, "_MEIPASS"):
+		return str(Path(sys._MEIPASS) / filename)
+	return str(Path(__file__).resolve().parent / filename)
 
 # DIR選択ダイアログ
 def select_click(event):
@@ -187,8 +197,16 @@ def exit_click(event):
 
 
 if __name__ == '__main__':
+
+
 	root = tk.Tk()
-	root.title('Rename Tool [Renm]')
+	root.title('Batch renaming tool [renm]')
+
+	try:
+   		root.iconbitmap(resource_path("renm_tk.ico"))
+	except Exception:
+		pass
+
 	root.resizable(False, False)
 
 	style = ttk.Style()
