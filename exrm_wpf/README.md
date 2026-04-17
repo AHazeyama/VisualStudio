@@ -1,4 +1,4 @@
-![](./png/Title.png)  
+![](./image/Title.png)  
 
 <!--
 * 指定した文字列を **<font color="Red">含まない</font>** ファイルを削除します。
@@ -30,4 +30,4 @@
 |[Help]|Help表示|
 |[Exit]|ツール終了|
 
-![](./png/View00.png)  
+![](./image/View00.png)  
