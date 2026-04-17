@@ -1,4 +1,4 @@
-<h1 style="color: magenta;">Hash value generation and comparison tool [hashgc] ReadMe</h1>
+![](./image/Title.png)  
 
 * Hash値の生成及び期待値との比較を行います。  
 * HashアルゴリズムはHD5,SHA-1,SHA-3,SHA-256,SHA-512,BLAKE2に対応しています。  

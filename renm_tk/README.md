@@ -1,4 +1,4 @@
-<h1 style="color: magenta;">File and Directory rename tool [renm] ReadMe</h1>
+![](./image/Title.png) 
 
 * 指定ディレクトリに含まれるファイル(ディレクトリ)名を一括変換します。  
 * 変換対象ディレクトリに子ディレクトリが存在する場合、含まれるファイル(ディレクトリ)  

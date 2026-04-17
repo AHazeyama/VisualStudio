@@ -1,4 +1,4 @@
-<h1 style="color: magenta;">Executive remove tool [WPF] ReadMe</h1>
+![](./png/Title.png)  
 
 <!--
 * 指定した文字列を **<font color="Red">含まない</font>** ファイルを削除します。
