@@ -44,12 +44,13 @@ def hash_file(path: Path, algo: Algo) -> str:
             h.update(chunk)
     return h.hexdigest()
 
+
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     return templates.TemplateResponse(
+        request,
         "index.html",
         {
-            "request": request,
             "result": None,
         },
     )
@@ -82,9 +83,9 @@ async def check(
             match = (expected_s == generated)
 
         return templates.TemplateResponse(
+            request,
             "index.html",
             {
-                "request": request,
                 "result": {
                     "filename": file.filename,
                     "algo": algo,

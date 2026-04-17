@@ -1,9 +1,6 @@
 ![](./image/Title.png)  
 
-* Hash値の生成及び期待値との比較を行います。  
-* HashアルゴリズムはHD5,SHA-1,SHA-3,SHA-256,SHA-512,BLAKE2に対応しています。  
-
-![](./png/hashgc00.png)  
+![](./image/hashgc00.png)  
 
 |項目|内容|
 |:--|:--|

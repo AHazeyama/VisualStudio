@@ -163,7 +163,7 @@
 
       <div class="row" style="margin-top: 14px;">
           <div class="label">Hash Algorithm:</div>
-          <label><input type="radio" name="algo" value="md5"> HM5</label>
+          <label><input type="radio" name="algo" value="md5"> HD5</label>
           <label><input type="radio" name="algo" value="sha1"> SHA-1</label>
           <label><input type="radio" name="algo" value="sha3_256"> SHA-3</label>
           <label><input type="radio" name="algo" value="sha256" checked> SHA-256</label>
@@ -192,39 +192,42 @@
       </div>
 
         {% if result %}
-        <div style="margin-top: 12px;">
-          <div class="row small">
-              <div class="label">File:</div>
-              <div class="mono">{{ result.filename }}</div>
-            </div>
-
-          <div class="row small">
-              <div class="label">Algo:</div>
-              <div class="mono">{{ result.algo }}</div>
-            </div>
-
-          <div class="row">
-              <div class="label">Generated Hash:</div>
-              <input id="gen" type="text" class="mono" value="{{ result.generated }}" readonly>
-              <button class="gbtn secondary" type="button" id="btnCopyGen">Copy</button>
-            </div>
-
-          {% if result.expected %}
+          <div style="margin-top: 12px;">
+        
               <div class="row small">
-                <div class="label">Expected:</div>
-              <div class="mono">{{ result.expected }}</div>
+                <div class="label">File:</div>
+              <div class="mono">{{ result.filename }}</div>
               </div>
-
-              {% if result.match %}
-                <div class="row"><span class="ok">Match !!</span></div>
-            {% else %}
-              <div class="row"><span class="ng">Discrepancy !!</span></div>
+        
+              <div class="row small">
+                <div class="label">Algo:</div>
+              <div class="mono">{{ result.algo }}</div>
+              </div>
+        
+              <div class="row">
+                <div class="label">Generated Hash:</div>
+              <input id="gen" type="text" class="mono" value="{{ result.generated }}" readonly>
+                <button class="gbtn secondary" type="button" id="btnCopyGen">Copy</button>
+            </div>
+        
+            {% if result and result.expected %}
+              <div class="row small">
+                  <div class="label">Expected:</div>
+                  <div class="mono">{{ result.expected }}</div>
+                </div>
+        
+              {% if result and result.match %}
+                  <div class="row"><span class="ok">Match !!</span></div>
+                {% else %}
+                <div class="row"><span class="ng">Discrepancy !!</span></div>
               {% endif %}
-            {% else %}
-            <div class="row small">(期待値なし)</div>
-          {% endif %}
+        
+              {% else %}
+                <div class="row small">(期待値なし)</div>
+            {% endif %}
+        
           </div>
-        {% endif %}
+          {% endif %}
     </div>
   </div>
 
