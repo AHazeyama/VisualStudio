@@ -1,0 +1,9 @@
+<map id="ExrmWpf.MainWindow.Exit_Click" name="ExrmWpf.MainWindow.Exit_Click">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,187,48"/>
+<area shape="rect" id="Node000002" href="$class_exrm_wpf_1_1_main_window.html#a0171cf9d6eec369ab9e79ada7a6ccf76" title=" " alt="" coords="235,13,414,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,24,222,26,217,27,187,29"/>
+<area shape="rect" id="Node000003" href="$class_exrm_wpf_1_1_main_window.html#a3bcac2187f7700060ad9cf3ff776c3e5" title=" " alt="" coords="462,13,663,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,24,449,27,444,27,414,29"/>
+<area shape="rect" id="Node000004" href="$class_exrm_wpf_1_1_main_window.html#a28a992d33c691d577da94f213d63fa30" title=" " alt="" coords="711,13,935,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="664,24,699,27,693,27,664,29"/>
+</map>

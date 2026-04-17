@@ -1,0 +1,9 @@
+<map id="ExrmWpf.MainWindow.ShowStartupMessage" name="ExrmWpf.MainWindow.ShowStartupMessage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,239,77"/>
+<area shape="rect" id="Node000002" href="$class_exrm_wpf_1_1_main_window.html#ae0fe484d6c1d6a7682a6071a7830375d" title=" " alt="" coords="287,5,489,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,40,274,39,269,40,240,46"/>
+<area shape="rect" id="Node000003" href="$class_exrm_wpf_1_1_main_window.html#a3bcac2187f7700060ad9cf3ff776c3e5" title=" " alt="" coords="287,72,488,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,66,274,72,269,73,239,72"/>
+<area shape="rect" id="Node000004" href="$class_exrm_wpf_1_1_main_window.html#a28a992d33c691d577da94f213d63fa30" title=" " alt="" coords="537,72,760,99"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="489,83,524,85,519,85,489,88"/>
+</map>

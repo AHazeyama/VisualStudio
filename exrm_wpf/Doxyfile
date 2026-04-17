@@ -1,0 +1,70 @@
+#-----------------------------------------------------------
+# Doxygen 設定ファイル（C#）
+#-----------------------------------------------------------
+
+# プロジェクト名（ドキュメントに表示される名称）
+PROJECT_NAME           = "exrm_wpf"
+
+# プロジェクトの簡単な説明
+PROJECT_BRIEF          = "C# アプリケーションの設計・実装ドキュメント"
+
+# 出力ディレクトリ
+OUTPUT_DIRECTORY       = docs
+
+# 入力ソースのルートディレクトリ
+INPUT                  = README.md .
+
+# 再帰的にディレクトリを探索するか
+RECURSIVE              = YES
+
+# 対象とする拡張子
+FILE_PATTERNS          = *.cs *.md
+
+# README.mdをメインページとして使用(★ これでMainPageがREADMEになる
+MARKDOWN_SUPPORT       = YES
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# 抽出対象のプログラミング言語
+OPTIMIZE_OUTPUT_FOR_CSHARP = YES
+
+# private メンバもドキュメント化するか
+EXTRACT_PRIVATE        = YES
+
+# protected メンバもドキュメント化するか
+EXTRACT_PROTECTED      = YES
+
+# static メンバも含めるか
+EXTRACT_STATIC         = YES
+
+# コメントが無くても対象を表示するか
+EXTRACT_ALL            = YES
+
+# クラス図（継承関係）を生成するか
+HAVE_DOT               = YES
+
+# クラス図・依存関係図を生成
+CLASS_DIAGRAMS         = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+# HTML 出力を有効化
+GENERATE_HTML          = YES
+
+# HTML ヘッダ・フッタを簡素化
+HTML_DYNAMIC_MENUS     = YES
+
+# LaTeX（PDF）出力は無効
+GENERATE_LATEX         = NO
+
+# XML 出力（CIや他ツール連携用）
+GENERATE_XML           = NO
+
+# 警告をすべて表示
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+
+# TODO / FIXME を拾う
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+

@@ -1,0 +1,26 @@
+<map id="ExrmWpf.MainWindow.LogInfo" name="ExrmWpf.MainWindow.LogInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="839,274,1041,300"/>
+<area shape="rect" id="Node000002" href="$class_exrm_wpf_1_1_main_window.html#a0171cf9d6eec369ab9e79ada7a6ccf76" title=" " alt="" coords="585,186,764,212"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="880,269,717,216,718,210,886,268"/>
+<area shape="rect" id="Node000010" href="$class_exrm_wpf_1_1_main_window.html#aa391041772047aaa2628120bb84c5d04" title=" " alt="" coords="558,295,791,338"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="821,300,792,306,792,301,827,299"/>
+<area shape="rect" id="Node000003" href="$class_exrm_wpf_1_1_main_window.html#a4f26836ed5a97acdff57d7c1b9ae0d3d" title=" " alt="" coords="299,144,488,187"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="567,187,489,180,488,174,572,186"/>
+<area shape="rect" id="Node000004" href="$class_exrm_wpf_1_1_main_window.html#a07827a77896d520d1c90b5355ee0dd26" title=" " alt="" coords="303,211,484,254"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="567,212,485,224,484,219,572,211"/>
+<area shape="rect" id="Node000005" href="$class_exrm_wpf_1_1_main_window.html#a77dae24bae299b67cfc94394bb1a68d0" title=" " alt="" coords="5,307,229,350"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="642,220,560,285,547,299,538,312,528,324,511,335,475,348,436,356,359,364,283,361,216,353,216,348,284,356,359,359,436,351,473,342,509,330,524,320,534,309,543,296,556,281,637,222"/>
+<area shape="rect" id="Node000006" href="$class_exrm_wpf_1_1_main_window.html#ab3ea1ef665d2ad3cee34951b852a80b2" title=" " alt="" coords="301,78,486,120"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="626,180,509,135,475,124,474,118,511,130,631,179"/>
+<area shape="rect" id="Node000007" href="$class_exrm_wpf_1_1_main_window.html#a25c5df4b8eec5e48648618c8ae49422c" title=" " alt="" coords="291,278,496,320"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="631,218,511,268,475,280,474,275,509,263,626,220"/>
+<area shape="rect" id="Node000008" href="$class_exrm_wpf_1_1_main_window.html#a85b5ba37b153279d964323a58cf5c9ea" title=" " alt="" coords="19,12,215,55"/>
+<area shape="poly" id="edge10_Node000002_Node000008" title=" " alt="" coords="654,172,631,141,597,103,556,66,509,39,473,26,435,17,358,9,282,10,216,17,214,12,282,5,358,4,436,12,474,21,511,34,559,62,601,99,635,138,660,174"/>
+<area shape="rect" id="Node000009" href="$class_exrm_wpf_1_1_main_window.html#ae79cf8d83fd9e4b7e7f8fdd891fc3635" title=" " alt="" coords="22,123,212,166"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="650,173,625,148,592,118,552,89,509,68,446,50,395,46,342,53,277,68,243,79,209,93,153,124,149,120,207,88,241,74,276,63,342,48,394,41,447,45,511,63,555,85,595,114,629,144,655,174"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="273,312,230,319,229,314,278,311"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="277,268,275,267,259,248,251,229,247,191,244,153,238,133,227,113,196,81,163,58,162,53,199,77,231,109,243,131,249,152,252,191,256,228,264,246,279,264,282,268"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="287,272,275,268,236,245,198,218,141,169,141,164,202,214,239,240,278,263,292,271"/>
+<area shape="rect" id="Node000011" href="$class_exrm_wpf_1_1_main_window.html#a24657c0a29b072ed4271bb132bb37044" title=" " alt="" coords="277,395,510,422"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="606,343,511,379,449,397,448,392,509,374,600,344"/>
+</map>

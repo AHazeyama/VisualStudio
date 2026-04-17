@@ -1,0 +1,13 @@
+<map id="ExrmWpf.MainWindow.MainWindow" name="ExrmWpf.MainWindow.MainWindow">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,47,239,73"/>
+<area shape="rect" id="Node000002" href="$class_exrm_wpf_1_1_main_window.html#a2f3696ff84a26471106e7e7cbd3f9a8c" title="InitializeComponent." alt="" coords="300,5,506,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,44,287,40,282,41,240,49"/>
+<area shape="rect" id="Node000003" href="$class_exrm_wpf_1_1_main_window.html#aa391041772047aaa2628120bb84c5d04" title=" " alt="" coords="287,72,520,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,71,274,77,268,78,239,77"/>
+<area shape="rect" id="Node000004" href="$class_exrm_wpf_1_1_main_window.html#ae0fe484d6c1d6a7682a6071a7830375d" title=" " alt="" coords="568,43,770,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="520,78,550,77,555,77,521,83"/>
+<area shape="rect" id="Node000005" href="$class_exrm_wpf_1_1_main_window.html#a3bcac2187f7700060ad9cf3ff776c3e5" title=" " alt="" coords="568,109,770,136"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="521,104,556,110,550,110,520,109"/>
+<area shape="rect" id="Node000006" href="$class_exrm_wpf_1_1_main_window.html#a28a992d33c691d577da94f213d63fa30" title=" " alt="" coords="818,109,1042,136"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="770,120,805,123,800,123,770,125"/>
+</map>
