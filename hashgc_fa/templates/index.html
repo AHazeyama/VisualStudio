@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hashgc (FastAPI)</title>
+    <style>
+    :root{
+      --bg: lightblue;
+        --frame-border: gray60;
+      --text: #000;
+        --ok: blue;
+      --ng: magenta;
+        --msg: darkgreen;
+    }
+
+    body{
+      font-family: sans-serif;
+        margin: 0;
+      background: var(--bg);
+        color: var(--text);
+    }
+
+    .wrap{
+      padding: 18px;
+        max-width: 980px;
+      margin: 0 auto;
+      }
+
+      .title{
+        font-size: 18px;
+      margin: 0 0 10px 0;
+      }
+
+      .frame{
+        border: 2px solid var(--frame-border);
+      border-radius: 8px;
+        padding: 12px;
+      background: var(--bg);
+        margin-bottom: 12px;
+    }
+
+    .legend{
+      display: inline-block;
+        padding: 0 8px;
+      margin-top: -22px;
+        background: var(--bg);
+      font-size: 14px;
+      }
+
+      .row{
+        display: flex;
+      flex-wrap: wrap;
+        gap: 10px;
+      align-items: center;
+        margin-top: 10px;
+    }
+
+    .label{
+      min-width: 160px;
+      }
+
+      input[type="text"]{
+        padding: 6px 8px;
+      border: 1px solid #999;
+        border-radius: 6px;
+      min-width: 520px;
+        max-width: 100%;
+    }
+
+    input[type="file"]{
+      max-width: 100%;
+      }
+
+      .small{
+        font-size: 12px;
+      opacity: .85;
+      }
+
+      /* TkのCanvasグラデボタン風 */
+      .gbtn{
+        appearance: none;
+      border: 1px solid rgba(0,0,0,.25);
+        border-radius: 7px;
+      padding: 8px 14px;
+        cursor: pointer;
+      font-weight: 600;
+        background: linear-gradient(to bottom, #f4f4f4, #cfcfcf);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+        user-select: none;
+    }
+    .gbtn:active{
+      transform: translateY(1px);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
+    }
+
+    .gbtn.secondary{
+      background: linear-gradient(to bottom, #ffffff, #d7e9ff);
+      }
+
+      .gbtn.danger{
+        background: linear-gradient(to bottom, #ffd6d6, #ff9f9f);
+    }
+
+    /* ドロップゾーン */
+    .dropzone{
+      border: 2px dashed rgba(0,0,0,.35);
+        border-radius: 10px;
+      padding: 12px;
+        background: rgba(255,255,255,.15);
+      transition: 120ms ease;
+      }
+      .dropzone.dragover{
+        background: rgba(255,255,255,.35);
+      border-color: rgba(0,0,0,.6);
+      }
+
+      .status{
+        white-space: pre-wrap;
+      padding: 10px;
+        border-radius: 8px;
+      background: rgba(255,255,255,.25);
+        min-height: 80px;
+      font-size: 13px;
+        color: var(--msg);
+    }
+
+    .ok{
+        color: var(--ok);
+        font-weight: 900;
+        font-size: 28px;
+      }
+      .ng{
+        color: red;
+        font-weight: 900;
+        font-size: 28px;
+      }
+      .status{ color: var(--msg); }
+      .err{ color: red; font-weight: 800; }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+    <h1 class="title">HASH Generation and expected value Check tool [hashgc]</h1>
+
+    <form id="form" class="frame" action="/check" method="post" enctype="multipart/form-data" autocomplete="off">
+      <div class="legend">Check subject</div>
+
+        <div id="dropzone" class="dropzone">
+        <div class="row">
+          <div class="label">Select file:</div>
+            <input id="file" type="file" name="file" required>
+          <button class="gbtn secondary" type="button" id="btnSelect">Select</button>
+          </div>
+          <div class="small">ここにファイルをドラッグ＆ドロップしてもOKです。</div>
+          <div class="row small">
+            <div class="label">Selected path:</div>
+          <div id="picked" class="mono">(none)</div>
+          </div>
+        </div>
+
+      <div class="row" style="margin-top: 14px;">
+          <div class="label">Hash Algorithm:</div>
+          <label><input type="radio" name="algo" value="md5"> HM5</label>
+          <label><input type="radio" name="algo" value="sha1"> SHA-1</label>
+          <label><input type="radio" name="algo" value="sha3_256"> SHA-3</label>
+          <label><input type="radio" name="algo" value="sha256" checked> SHA-256</label>
+          <label><input type="radio" name="algo" value="sha512"> SHA-512</label>
+          <label><input type="radio" name="algo" value="blake2b"> BLAKE2</label>
+        </div>
+
+      <div class="row" style="margin-top: 14px;">
+          <div class="label">Hash Expectation:</div>
+          <input id="expected" type="text" name="expected" placeholder="（任意）期待値のハッシュを貼り付け">
+          <button class="gbtn secondary" type="button" id="btnPaste">Paste</button>
+          <button class="gbtn secondary" type="button" id="btnClear">Clear</button>
+        </div>
+
+      <div class="row" style="margin-top: 14px;">
+          <button class="gbtn" type="submit" id="btnCheck">Check</button>
+        </div>
+    </form>
+
+    <div class="frame">
+      <div class="legend">Messages and tutorials</div>
+
+        <div id="status" class="status">
+[Select] で生成対象を選択し、"hash algorithm" を選択してから [Check] をクリックしてください。
+期待値がある場合は [Paste] で "Hash Expectation" に貼り付けてから [Check] をクリックしてください。
+      </div>
+
+        {% if result %}
+        <div style="margin-top: 12px;">
+          <div class="row small">
+              <div class="label">File:</div>
+              <div class="mono">{{ result.filename }}</div>
+            </div>
+
+          <div class="row small">
+              <div class="label">Algo:</div>
+              <div class="mono">{{ result.algo }}</div>
+            </div>
+
+          <div class="row">
+              <div class="label">Generated Hash:</div>
+              <input id="gen" type="text" class="mono" value="{{ result.generated }}" readonly>
+              <button class="gbtn secondary" type="button" id="btnCopyGen">Copy</button>
+            </div>
+
+          {% if result.expected %}
+              <div class="row small">
+                <div class="label">Expected:</div>
+              <div class="mono">{{ result.expected }}</div>
+              </div>
+
+              {% if result.match %}
+                <div class="row"><span class="ok">Match !!</span></div>
+            {% else %}
+              <div class="row"><span class="ng">Discrepancy !!</span></div>
+              {% endif %}
+            {% else %}
+            <div class="row small">(期待値なし)</div>
+          {% endif %}
+          </div>
+        {% endif %}
+    </div>
+  </div>
+
+    <script>
+    const fileInput = document.getElementById("file");
+    const dropzone  = document.getElementById("dropzone");
+    const picked    = document.getElementById("picked");
+    const expected  = document.getElementById("expected");
+    const status    = document.getElementById("status");
+
+    // ---- Select ボタン（ネイティブの file picker を開く）----
+    document.getElementById("btnSelect").addEventListener("click", () => {
+      fileInput.click();
+      });
+
+      function updatePicked() {
+        const f = fileInput.files && fileInput.files[0];
+      picked.textContent = f ? f.name : "(none)";
+      }
+      fileInput.addEventListener("change", updatePicked);
+
+      // ---- Drag & Drop（ドロップで fileInput にセット）----
+      ["dragenter","dragover"].forEach(ev => {
+        dropzone.addEventListener(ev, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.add("dragover");
+      });
+      });
+      ["dragleave","drop"].forEach(ev => {
+        dropzone.addEventListener(ev, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove("dragover");
+      });
+      });
+
+      dropzone.addEventListener("drop", (e) => {
+        const files = e.dataTransfer.files;
+      if (!files || files.length === 0) return;
+        // input.files は read-only なので DataTransfer 経由でセット
+      const dt = new DataTransfer();
+        dt.items.add(files[0]);
+      fileInput.files = dt.files;
+        updatePicked();
+      status.textContent = `ファイルを受け取りました: ${files[0].name}\n"hash algorithm" を選択して [Check] をクリックしてください。`;
+      });
+
+      // ---- Paste（Clipboard API）----
+      document.getElementById("btnPaste").addEventListener("click", async () => {
+        // Clipboard APIは「HTTPS または localhost」でのみ安定動作します
+      // さらに「ユーザー操作（ボタンクリック）」が必要です
+        try {
+        const txt = await navigator.clipboard.readText();
+        expected.value = (txt || "").trim();
+        status.textContent =
+          `"Hash Expectation" に貼り付けました。\nクリップボード：${expected.value || "-- It's empty --"}`;
+        } catch (err) {
+        // フォールバック：手入力を促す
+        const txt = prompt("クリップボード読み取りが許可されていません。\n貼り付けたい文字列を入力してください:", "");
+        if (txt !== null) {
+          expected.value = (txt || "").trim();
+            status.textContent = `"Hash Expectation" を更新しました。`;
+        } else {
+          status.textContent = `Paste をキャンセルしました。`;
+          }
+        }
+    });
+
+    // ---- Clear ----
+    document.getElementById("btnClear").addEventListener("click", () => {
+      expected.value = "";
+        status.textContent =
+        `[Select] で生成対象を選択し、"hash algorithm" を選択してから [Check] をクリックしてください。\n` +
+        `期待値がある場合は [Paste] で "Hash Expectation" に貼り付けてから [Check] をクリックしてください。`;
+    });
+
+    // ---- Copy Generated Hash ----
+    const btnCopyGen = document.getElementById("btnCopyGen");
+    if (btnCopyGen) {
+      btnCopyGen.addEventListener("click", async () => {
+          const gen = document.getElementById("gen");
+          if (!gen) return;
+          try {
+            await navigator.clipboard.writeText(gen.value);
+          status.textContent = `"Generated Hash" をコピーしました。`;
+          } catch (e) {
+            gen.select();
+          document.execCommand("copy");
+            status.textContent = `"Generated Hash" をコピーしました（フォールバック）。`;
+        }
+      });
+      }
+
+      // 初期反映
+      updatePicked();
+    </script>
+</body>
+</html>
