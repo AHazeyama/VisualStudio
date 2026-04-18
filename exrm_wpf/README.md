@@ -1,5 +1,5 @@
 ![](./image/Title.png)  
-<p align="center">
+<p align="left">
 	<img src="./image/Title_dark.png#gh-dark-mode-only" alt="banner dark">
 	<img src="./image/Title_light.png#gh-light-mode-only" alt="banner light">
 </p>
