@@ -1,17 +1,60 @@
 <p align="left">
-	<img src="./image/Title_dark.png#gh-dark-mode-only" alt="banner dark">
-	<img src="./image/Title_light.png#gh-light-mode-only" alt="banner light">
+  <img src="./image/Title_dark.png#gh-dark-mode-only" alt="banner dark">
+  <img src="./image/Title_light.png#gh-light-mode-only" alt="banner light">
 </p>
 
-![](./image/hashgc00.png)  
+# Hash value generation and comparison tool [hashgc]
 
-|項目|内容|
-|:--|:--|
-|Check subject [ ]|Hash生成対象ファイル|
-|[Select]|Hash生成対象ファイル選択|
-|⦿ Hash Algorithm|Hash生成アルゴリズム、HD5,SHA-1,SHA-3,SHA-256,SHA-512,BLAKE2から選択|
-|Hash Expectation [ ]|Hash期待値|
-|[Paste]|期待値ペースト(クリップボード内容をペースト)|
-|[Clear]|入力情報消去|
-|[Check]|Hash生成及び期待値比較|
-|Messages and tutorials [ ]|処理メッセージ及び操作方法|
+![](./image/hashgc00.png)
+
+---
+
+## Overview
+ファイルの整合性確認（チェックサム検証）を手作業で行う際の手間とミスを削減するために開発したツールです。  
+複数のハッシュアルゴリズムに対応し、生成結果と期待値の比較をワンステップで実行可能です。  
+業務における検証作業の効率化およびヒューマンエラー防止を目的としています。
+
+---
+
+## Features
+
+- ファイルからハッシュ値を生成
+- 期待値との比較（Match / Discrepancy 表示）
+- 複数アルゴリズム対応  
+  - MD5 / SHA-1 / SHA-256 / SHA-512 / BLAKE2
+- クリップボードから期待値を貼り付け（Paste）
+- シンプルなUIによる直感的操作
+- エラーハンドリング（未選択・不正入力）
+- メッセージ表示による操作ガイド
+
+---
+
+## API (FastAPI)
+
+本ツールは FastAPI によりAPI化されています。
+
+### Endpoints
+
+- `POST /hash`
+  - ファイルをアップロードしてハッシュ値を生成
+
+- `POST /compare`
+  - 生成したハッシュと期待値を比較
+
+---
+
+## Usage
+
+1. 「Select」で対象ファイルを選択  
+2. ハッシュアルゴリズムを選択  
+3. （任意）期待値を貼り付け  
+4. 「Check」をクリック  
+
+---
+
+## Use Case
+
+- ダウンロードファイルの整合性確認
+- 配布物の改ざん検知
+- 開発成果物の検証作業自動化
+- CI/CDパイプラインへの組み込み（API利用）
