@@ -3,6 +3,8 @@
 	<img src="./image/Title_light.png#gh-light-mode-only" alt="banner light">
 </p>
 
+![](./image/View00.png)  
+
 |項目|内容|
 |:--|:--|
 |Exec directory [ ]|処理対象ディレクトリ|
@@ -15,4 +17,3 @@
 |[Help]|Help表示|
 |[Exit]|ツール終了|
 
-![](./image/View00.png)  
