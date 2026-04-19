@@ -3,7 +3,7 @@
   <img src="./image/Title_light.png#gh-light-mode-only" alt="renm banner light">
 </p>
 
-# Batch renaming tool for file and directories [renm_ps6]
+# Batch renaming tool for files and directories [renm_ps6]
 <p align="center">
   <img src="./image/renm00.png" width="720">
 </p>
