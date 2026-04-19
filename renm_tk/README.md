@@ -1,4 +1,4 @@
-<p align="left">
+L<p align="left">
   <img src="./image/Title_dark.png#gh-dark-mode-only" alt="renm banner dark">
   <img src="./image/Title_light.png#gh-light-mode-only" alt="renm banner light">
 </p>
@@ -62,7 +62,7 @@
 >| 項目                     | 説明             |
 >| :--------------------- | :------------- |
 >| Exec directory         | 処理対象ディレクトリ     |
->| Before word            | 変換前文字列（正規表現対応） |
+>| Before word            | 変換対象文字列（正規表現対応） |
 >| After word             | 変換後文字列         |
 >| ☑ Recursive processing | サブディレクトリを再帰処理  |
 >| Processing message     | 処理ログ表示         |
