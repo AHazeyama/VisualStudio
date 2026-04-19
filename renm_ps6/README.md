@@ -17,6 +17,12 @@
 
 ---
 
+## Download
+
+👉 https://github.com/AHazeyama/public/releases/latest  
+
+---
+
 ## ✨ Features
 
 * ファイル / ディレクトリの一括リネーム
@@ -95,6 +101,16 @@ pyinstaller ^
 * 手作業によるリネーム作業の効率化
 * 操作ミスの削減
 * 大量ファイル処理の自動化
+
+---
+
+## Documentation  
+
+Doxygen により生成できます。
+→ ソースコードの可読性向上と構造理解を目的としています。
+```bash  
+doxygen Doxyfile
+```
 
 ---
 

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-#┌───────────────────────────────────────────────────────
-#│ Name     : renm.py
+#┌──────────────────────────────────────────────────────────
+#│ Name     : renm_tk.py
 #│ Libraly  : Tkinter
-#│ Function : File and Directory renamer
-#└───────────────────────────────────────────────────────
+#│ Function : Batch renaming tool for files and directories
+#└──────────────────────────────────────────────────────────
 
 import os
 import sys
@@ -14,7 +14,6 @@ import re
 import shutil
 import tkinter as tk
 import tkinter.font as tkfont
-#from tkinter import *
 from tkinter import N, S, E, W, NE, LEFT, RIGHT, VERTICAL, END
 from tkinter import ttk
 from tkinter import Text
@@ -101,7 +100,7 @@ def help_click(event):
 	msg.config(state="normal")
 	msg.delete(1.0, tk.END)
 	msg.insert(tk.END, "name : renm\n" , "info")
-	msg.insert(tk.END, "function : Batch Rename Tool (ファイル名一括変換ツール)\n" , "info")
+	msg.insert(tk.END, "function : Batch renaming tool for files and directories\n" , "info")
 	msg.insert(tk.END, "usage :\n" , "info")
 	msg.insert(tk.END, "  Exec directory : 処理対象ディレクトリを指定。\n" , "info")
 	msg.insert(tk.END, "  Before word	   : 変換前ファイル[ディレクトリ]名に含まれる文字列を指定。\n" , "info")
@@ -200,7 +199,7 @@ if __name__ == '__main__':
 
 
 	root = tk.Tk()
-	root.title('Batch renaming tool [renm]')
+	root.title('Batch renaming tool for files and directories [renm_tk]')
 
 	try:
    		root.iconbitmap(resource_path("renm_tk.ico"))

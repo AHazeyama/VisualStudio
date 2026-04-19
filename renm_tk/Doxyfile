@@ -3,10 +3,10 @@
 #-----------------------------------------------------------
 
 # プロジェクト名（画面上部などに表示）
-PROJECT_NAME           = renm_tk_VS
+PROJECT_NAME           = renm_tk
 
 # プロジェクト概要（任意）
-PROJECT_BRIEF          = "File and Directory rename tool [renm]"
+PROJECT_BRIEF          = "Batch renaming tool for files and directories [renm_tk]"
 
 # 出力先（docs/html/index.html が生成される）
 OUTPUT_DIRECTORY       = docs
