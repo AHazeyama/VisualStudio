@@ -1,0 +1,18 @@
+<map id="renm_ps6.RenmWindow.clear_message" name="renm_ps6.RenmWindow.clear_message">
+<area shape="rect" id="Node000001" title=" " alt="" coords="544,152,759,192"/>
+<area shape="rect" id="Node000002" href="$classrenm__ps6_1_1RenmWindow.html#aef3c7c31a7a3d6cff1a91e08d69ea751" title=" " alt="" coords="279,5,490,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="613,145,559,105,495,66,451,48,453,43,497,62,562,101,617,141"/>
+<area shape="rect" id="Node000003" href="$classrenm__ps6_1_1RenmWindow.html#aa255eadec90489b8d53b4886e6f4e770" title=" " alt="" coords="5,124,225,164"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="600,148,550,127,495,111,434,101,385,99,274,111,189,127,188,121,273,105,385,94,434,96,497,105,552,122,602,143"/>
+<area shape="rect" id="Node000004" href="$classrenm__ps6_1_1RenmWindow.html#a8549dab0e0db1b2f94ec8968078fbcf5" title=" " alt="" coords="273,120,496,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="530,160,496,156,497,151,531,155"/>
+<area shape="rect" id="Node000005" href="$classrenm__ps6_1_1RenmWindow.html#afb8ebe486575978446d2cfca80481270" title=" " alt="" coords="276,184,493,224"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="530,189,494,194,493,188,530,184"/>
+<area shape="rect" id="Node000006" href="$classrenm__ps6_1_1RenmWindow.html#a9fd7d55ea8e9ca01a1ca11d6cb57888c" title=" " alt="" coords="276,248,493,288"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="594,200,497,239,460,250,458,245,495,233,592,195"/>
+<area shape="rect" id="Node000008" href="$classrenm__ps6_1_1RenmWindow.html#a2a8c512cec2d73e55ba1f8ec646b14f0" title=" " alt="" coords="277,312,492,352"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="623,204,568,254,534,280,497,302,470,314,468,309,495,298,531,276,565,250,620,200"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="280,184,205,167,206,161,282,178"/>
+<area shape="rect" id="Node000007" href="$classrenm__ps6_1_1RenmWindow.html#a72c43d0afdb1baf3a9dea39dbea8b522" title=" " alt="" coords="8,248,223,288"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="262,271,223,271,223,265,262,265"/>
+</map>

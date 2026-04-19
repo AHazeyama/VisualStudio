@@ -1,0 +1,15 @@
+<map id="renm_ps6.RenmWindow.move_click" name="renm_ps6.RenmWindow.move_click">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,90,225,130"/>
+<area shape="rect" id="Node000002" href="$classrenm__ps6_1_1RenmWindow.html#a0d6b6549e9c6505a90382d181213c900" title=" " alt="" coords="555,58,785,98"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,88,199,51,235,33,273,20,337,6,389,3,442,9,507,20,562,33,612,51,610,56,560,38,506,25,441,14,389,9,338,11,274,25,237,38,202,55,144,92"/>
+<area shape="rect" id="Node000003" href="$classrenm__ps6_1_1RenmWindow.html#a8d883849ff2473e836e2b6f88e587b5e" title=" " alt="" coords="563,150,777,190"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,128,210,152,274,172,344,181,416,185,549,181,549,187,416,191,343,187,273,177,208,157,153,133"/>
+<area shape="rect" id="Node000004" href="$classrenm__ps6_1_1RenmWindow.html#a020dcc3f9ef3962426f1b2d957ffa630" title=" " alt="" coords="273,58,507,98"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="225,95,259,91,260,96,226,100"/>
+<area shape="rect" id="Node000005" href="$classrenm__ps6_1_1RenmWindow.html#afb8ebe486575978446d2cfca80481270" title=" " alt="" coords="281,122,499,162"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="226,120,268,125,267,131,225,126"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="507,76,541,76,541,81,507,81"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="339,59,336,48,344,39,362,34,390,32,422,34,439,42,437,47,420,40,390,37,363,39,347,44,341,50,344,57"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="478,120,568,99,569,104,479,125"/>
+<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="499,150,549,155,549,161,499,156"/>
+</map>
