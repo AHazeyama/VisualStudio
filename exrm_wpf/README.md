@@ -129,5 +129,5 @@ doxygen Doxyfile
 
 <br>
 
-## 📄 License
+## License
 TBD
