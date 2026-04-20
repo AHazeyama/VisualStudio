@@ -1,4 +1,4 @@
-L<p align="left">
+<p align="left">
   <img src="./image/Title_dark.png#gh-dark-mode-only" alt="renm banner dark">
   <img src="./image/Title_light.png#gh-light-mode-only" alt="renm banner light">
 </p>
@@ -12,6 +12,13 @@ L<p align="left">
 
 ## Overview
 大量ファイルのリネーム作業を安全かつ効率的に行うためのデスクトップGUIツールです。
+
+<br>
+
+## Purpose
+* 手作業によるリネーム作業の効率化
+* 操作ミスの削減
+* 大量ファイル処理の自動化
 
 <br>
 
@@ -56,25 +63,45 @@ L<p align="left">
 <br>
 
 ## UI Components
->| 項目                     | 説明             |
->| :--------------------- | :------------- |
+### Input items
+>| Item | Eescription |
+>| :--| :--|
 >| Exec directory         | 処理対象ディレクトリ     |
 >| Before word            | 変換対象文字列（正規表現対応） |
 >| After word             | 変換後文字列         |
 >| ☑ Recursive processing | サブディレクトリを再帰処理  |
 >| Processing message     | 処理ログ表示         |
+### Buttons
+>| Item | Eescription |
+>| :--| :--|
 >| Move                   | 変換実行           |
 >| Clear                  | 入力クリア          |
 >| Undo                   | 変更の取り消し        |
 >| Help                   | ヘルプ表示          |
 >| Exit                   | 終了             |
 
-
 <br>
 
 ## Tech Stack
 * Python 3.x
 * Tkinter
+
+<br>
+
+## Design / Implementation Points
+- 一括リネーム、文字列追加/削除に特化
+- GUI から扱えるようにして、CLI に不慣れな利用者でも操作可能
+- Undo を実装し、操作リスクの軽減を意識
+- 処理メッセージ表示により、何が起きているかを分かりやすく可視化
+
+<br>
+
+## Why Tkinter
+本ツールはPython標準ライブラリのみの構成と動作の軽快性を重視し、Tkinter を採用しています。
+- 動作の軽快感
+- 外部ライブラリ不使用による実装の容易化
+- 状態表示やメッセージ表示を組み込みやすい
+- デスクトップユーティリティに適した構成
 
 <br>
 
@@ -88,13 +115,6 @@ pyinstaller ^
   --add-data "renm_tk.ico;." ^
   renm_tk.py
 ```
-
-<br>
-
-## Purpose
-* 手作業によるリネーム作業の効率化
-* 操作ミスの削減
-* 大量ファイル処理の自動化
 
 <br>
 

@@ -82,7 +82,7 @@ pip install -r requirements.txt
 ## Run
 ![](./image/shell_logo.png)
 ```bash
-uvicorn app:app --host 0.0.0.0 --port 8000 --reloaduvicorn app:app --host 0.0.0.0 --port 8000 --reload
+uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 <br>
@@ -117,6 +117,7 @@ docker run -p 8000:8000 hashgc
 ## Access
 * Application  
   http://localhost:8000  
+
 * Swagger UI  
   http://localhost:8000/docs
 
@@ -138,8 +139,7 @@ Doxygen により生成できます。
 ```bash
 doxygen Doxyfile
 ```
-生成後、以下をブラウザで開くことでドキュメントを確認できます。  
-📁 **/** 📄
+生成後、以下のファイルをブラウザで開くことでドキュメントを確認できます。  
 ```
 docs/html/index.html
 ```
