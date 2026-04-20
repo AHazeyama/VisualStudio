@@ -16,7 +16,6 @@ L<p align="left">
 <br>
 
 ## Features
-
 * ファイル / ディレクトリの一括リネーム
 * 正規表現対応（柔軟なパターン変換）
 * サブディレクトリを含めた再帰処理
@@ -29,7 +28,6 @@ L<p align="left">
 <br>
 
 ## Usage
-
 1. **Exec directory** を選択
 2. **Before word** に変換前文字列（正規表現可）を入力
 3. **After word** に変換後文字列を入力
@@ -46,7 +44,6 @@ L<p align="left">
 <br>
 
 ## Caution
-
 本ツールはファイル / ディレクトリ構成を変更します。
 誤操作により意図しない結果になる可能性があります。
 
@@ -59,7 +56,6 @@ L<p align="left">
 <br>
 
 ## UI Components
-
 >| 項目                     | 説明             |
 >| :--------------------- | :------------- |
 >| Exec directory         | 処理対象ディレクトリ     |
@@ -77,7 +73,6 @@ L<p align="left">
 <br>
 
 ## Tech Stack
-
 * Python 3.x
 * Tkinter
 
@@ -85,7 +80,6 @@ L<p align="left">
 
 ## Build (for developers) 
 ![](./image/shell_logo.png)
-
 ```bash
 pyinstaller ^
   --noconsole ^
@@ -98,7 +92,6 @@ pyinstaller ^
 <br>
 
 ## Purpose
-
 * 手作業によるリネーム作業の効率化
 * 操作ミスの削減
 * 大量ファイル処理の自動化
@@ -106,7 +99,6 @@ pyinstaller ^
 <br>
 
 ## Documentation  
-
 Doxygen により生成できます。
 → ソースコードの可読性向上と構造理解を目的としています。  
 ![](./image/bash_logo.png)  
@@ -117,11 +109,9 @@ doxygen Doxyfile
 <br>
 
 ## Download
-
 🔗 https://github.com/AHazeyama/public/releases/latest  
 
 <br>
 
 ## License
-
 TBD

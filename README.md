@@ -4,13 +4,20 @@
 </p>
 
 # Overview
+業務効率化および運用改善を目的としたツール群です。
 
-業務効率化を目的としたツール群です。
+ファイル操作や整合性検証といった反復作業を対象に、  
+　デスクトップアプリケーション (C# / Python)  
+及び  
+　Web API (FastAPI)  
+として実装しています。
+
+単なる機能実装に留まらず、実運用を想定し、  
+操作性・安全性・再現性を重視した設計としています。
 
 <br>
 
 # Tool Description
-
 | Item | Description | Platform |
 |:--|:--|:--|
 | [exrm_wpf](https://github.com/AHazeyama/public/tree/main/exrm_wpf) | C#/WPFによるファイル操作ツール | Windows |
