@@ -79,7 +79,7 @@ pip install -r requirements.txt
 
 <br>
 
-## Run
+## Run (Local)
 ![](./image/shell_logo.png)
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000 --reload
@@ -90,6 +90,7 @@ uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 ## Access
 * Application  
     http://localhost:8000
+
 * Swagger UI  
 http://localhost:8000/docs
 
