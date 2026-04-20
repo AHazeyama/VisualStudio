@@ -11,13 +11,7 @@ L<p align="left">
 <br>
 
 ## Overview
-ファイル / ディレクトリ名の一括変換を安全かつ効率的に行うためのデスクトップGUIツールです。
-
-<br>
-
-## Download
-
-🔗 https://github.com/AHazeyama/public/releases/latest  
+大量ファイルのリネーム作業を安全かつ効率的に行うためのデスクトップGUIツールです。
 
 <br>
 
@@ -41,6 +35,13 @@ L<p align="left">
 3. **After word** に変換後文字列を入力
 4. **Move** をクリックして実行
 5. 必要に応じて **Undo** で元に戻す
+
+<br>
+
+## Use Case
+- 自動で生成されたファイル名(日付+追番等)の一括リネーム
+- Prefix、Suffix等の文字列の付加
+- ファイル名中の不要文字列の削除
 
 <br>
 
@@ -112,6 +113,12 @@ Doxygen により生成できます。
 ```bash  
 doxygen Doxyfile
 ```
+
+<br>
+
+## Download
+
+🔗 https://github.com/AHazeyama/public/releases/latest  
 
 <br>
 
