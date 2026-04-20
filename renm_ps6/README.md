@@ -119,8 +119,8 @@ pyinstaller ^
 <br>
 
 ## Documentation  
-Doxygen により生成できます。
-→ ソースコードの可読性向上と構造理解を目的としています。  
+Doxygen により生成できます。  
+　⇒ ソースコードの可読性向上と構造理解を目的としています。  
 ![](./image/bash_logo.png)  
 ```bash  
 doxygen Doxyfile

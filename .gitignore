@@ -1,3 +1,5 @@
+.gitignore
+desktop.ini
 *.dll
 *.exe
 *.log
@@ -20,3 +22,4 @@ obj/
 publish/
 test1st/
 venv/
+docs/
