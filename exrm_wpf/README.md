@@ -4,7 +4,7 @@
 </p>
 
 # Exclusive removal tool [exrm]
-![](./image/View00.png)
+![](./image/app_view.png)
 
 <br>
 
