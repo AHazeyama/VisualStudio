@@ -52,7 +52,7 @@ namespace ExrmWpf
             );
         
             AppendMixedLine(
-                ("  問答無用で削除します !!", MediaBrushes.DeepSkyBlue, FontWeights.Normal, FontStyles.Normal)
+                ("  問答無用で削除します !!", MediaBrushes.Red, FontWeights.Normal, FontStyles.Normal)
             );
         
             AppendMixedLine(
