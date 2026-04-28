@@ -4,7 +4,7 @@
 </p>
 
 # exclusive removal tool [exrm]
-![](./image/app_view.png)
+![](./image/exrm_wpf.png)
 
 <br>
 
