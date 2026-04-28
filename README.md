@@ -24,3 +24,8 @@
 | [renm_tk](https://github.com/AHazeyama/public/tree/main/renm_tk) | Python / Tkinter によるファイル一括リネームツール | Windows & Linux(Ubuntu) |
 | [hvgc_fa](https://github.com/AHazeyama/public/tree/main/hvcg_fa) | Python / FastAPI によるsumcheck(Hash値)検証ツール | Web |
 | [ptnc_flask](https://github.com/AHazeyama/public/tree/main/ptnc_flask) | Python / FLASK による位取り記数法 (2,8,10,16進数) 間相互変換ツール | Web |
+
+<br>
+
+# Download the Release 
+🔗 https://github.com/AHazeyama/public/releases/latest  
