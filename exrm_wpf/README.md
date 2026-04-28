@@ -3,8 +3,8 @@
   <img src="./image/Title_light.png#gh-light-mode-only" alt="banner light">
 </p>
 
-# Exclusive removal tool [exrm]
-![](./image/app_view.png)
+# exclusive removal tool [exrm]
+![](./image/exrm_wpf.png)
 
 <br>
 
