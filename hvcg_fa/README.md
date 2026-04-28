@@ -3,8 +3,8 @@
   <img src="./image/Title_light.png#gh-light-mode-only" alt="banner light">
 </p>
 
-# Hash value generation and comparison tool [hashgc]
-![](./image/hashgc00.png)
+# hash value generation & comparison tool [hvgc_fa]
+![](./image/hvgc_fa.png)
 
 <br>
 
@@ -104,7 +104,7 @@ Docker を使用して実行することもできます。
 ## Build
 ![](./image/bash_logo.png)
 ```bash
-docker build -t hashgc .
+docker build -t eashgc .
 ```
 
 <br>
@@ -112,7 +112,7 @@ docker build -t hashgc .
 ## Run
 ![](./image/bash_logo.png)
 ```bash
-docker run -p 8000:8000 hashgc
+docker run -p 8000:8000 hvgc_fa
 ```
 
 ## Access

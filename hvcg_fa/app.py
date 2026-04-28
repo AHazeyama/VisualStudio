@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-#┌─────────────────────────────
-#│ Name      : hashgc_fastapi.py
+#┌───────────────────────────────────────────────────────
+#│ Name      : hvgc_fa.py
 #│ FrameWort : FastAPI
-#│ Function  : Hash value generation and comparison tool
-#└─────────────────────────────
+#│ Function  : hash value generation & comparison tool
+#└───────────────────────────────────────────────────────
 
 # app.py
 from __future__ import annotations
@@ -65,7 +65,7 @@ async def check(
     # アップロードを一時保存（デプロイ時は /tmp 相当を使う想定）
     tmp_dir = Path(os.environ.get("TMPDIR") or os.environ.get("TEMP") or "/tmp")
     tmp_dir.mkdir(parents=True, exist_ok=True)
-    tmp_path = tmp_dir / f"hashgc_{os.getpid()}_{file.filename}"
+    tmp_path = tmp_dir / f"hvgc_{os.getpid()}_{file.filename}"
 
     try:
         # 大きいファイルでもOK（ストリーム書き込み）
