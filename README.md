@@ -23,4 +23,4 @@
 | [renm_ps6](https://github.com/AHazeyama/public/tree/main/renm_ps6) | Python/PySide6 によるファイル一括リネームツール | Windows & Linux(Ubuntu) |
 | [renm_tk](https://github.com/AHazeyama/public/tree/main/renm_tk) | Python/Tkinter によるファイル一括リネームツール | Windows & Linux(Ubuntu) |
 | [hvgc_fa](https://github.com/AHazeyama/public/tree/main/hvcg_fa) | Python/FastAPI によるsumcheck(Hash値)検証ツール | Web |
-| [ptnc_flask](https://github.com/AHazeyama/public/tree/main/ptnc_flask) | Python/FastAPI によるsumcheck(Hash値)検証ツール | Web |
+| [ptnc_flask](https://github.com/AHazeyama/public/tree/main/ptnc_flask) | FLASK による位取り記数法間の相互変換ツール | Web |
