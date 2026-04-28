@@ -3,7 +3,7 @@
 #┌──────────────────────────────────────────────────────────
 #│ Name     : renm_tk.py
 #│ Libraly  : Tkinter
-#│ Function : Batch renaming tool for files and directories
+#│ Function : batch renaming tool for files and directories
 #└──────────────────────────────────────────────────────────
 
 import os
@@ -100,7 +100,7 @@ def help_click(event):
 	msg.config(state="normal")
 	msg.delete(1.0, tk.END)
 	msg.insert(tk.END, "name : renm\n" , "info")
-	msg.insert(tk.END, "function : Batch renaming tool for files and directories\n" , "info")
+	msg.insert(tk.END, "function : batch renaming tool for files and directories\n" , "info")
 	msg.insert(tk.END, "usage :\n" , "info")
 	msg.insert(tk.END, "  Exec directory : 処理対象ディレクトリを指定。\n" , "info")
 	msg.insert(tk.END, "  Before word	   : 変換前ファイル[ディレクトリ]名に含まれる文字列を指定。\n" , "info")
@@ -199,7 +199,7 @@ if __name__ == '__main__':
 
 
 	root = tk.Tk()
-	root.title('Batch renaming tool for files and directories [renm_tk]')
+	root.title('batch renaming tool for files and directories [renm_tk]')
 
 	try:
    		root.iconbitmap(resource_path("renm_tk.ico"))

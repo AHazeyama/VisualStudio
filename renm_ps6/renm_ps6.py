@@ -3,7 +3,7 @@
 # ┌──────────────────────────────────────────────────────────
 # │ Name     : renm_ps6.py
 # │ Library  : PySide6
-# │ Function : Batch renaming tool for files and directories
+# │ Function : batch renaming tool for files and directories
 # └──────────────────────────────────────────────────────────
 
 import os
@@ -42,7 +42,7 @@ class RenmWindow(QMainWindow):
         self.setWindowIcon(QIcon(icon_path))
 
 
-        self.setWindowTitle("Batch renaming tool for files and directories [renm_ps6]")
+        self.setWindowTitle("batch renaming tool for files and directories [renm_ps6]")
         self.setFixedSize(980, 520)
 
 #        if Path(icon_path).exists():
@@ -300,7 +300,7 @@ class RenmWindow(QMainWindow):
         self.clear_message()
         lines = [
             "name : renm",
-            "function : Batch renaming tool for files and directories",
+            "function : batch renaming tool for files and directories",
             "usage :",
             "  Exec directory : 処理対象ディレクトリを指定。",
             "  Before word    : 変換前ファイル[ディレクトリ]名に含まれる文字列を指定。",
