@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Positional numeral conversion tool [ptnc]</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Meiryo, sans-serif;
+            background: #e9eef3;
+            padding: 28px;
+        }
+
+        .app {
+            background: lightblue;
+            border: 3px ridge #d8d8d8;
+            padding: 12px;
+            width: 980px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.18);
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #202020;
+            margin-bottom: 12px;
+            padding: 6px 8px;
+            border: 2px inset #e0e0e0;
+            background: #bfefff;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 7px;
+        }
+
+        label.main-label {
+            width: 110px;
+            font-size: 16px;
+            padding-left: 6px;
+            color: #202020;
+        }
+
+        input[type="text"] {
+            width: 730px;
+            font-size: 16px;
+            padding: 4px 6px;
+            border: 2px inset #eeeeee;
+            background: white;
+        }
+
+        input[type="text"]:focus {
+            outline: 2px solid #4aa3ff;
+        }
+
+        .small-input {
+            width: 80px !important;
+        }
+
+        .readonly {
+            background: #eeeeee !important;
+            color: #666666;
+        }
+
+        button {
+            width: 110px;
+            height: 30px;
+            margin-left: 8px;
+            color: snow;
+            border: 1px solid gray;
+            cursor: pointer;
+            background: linear-gradient(#696969, #f5f5f5);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            filter: brightness(1.08);
+        }
+
+        button:active {
+            transform: translate(1px, 1px);
+        }
+
+        .option-area {
+            margin-top: 10px;
+            padding: 8px;
+            border: 2px inset #e0e0e0;
+            background: #c8f3ff;
+        }
+
+        .buttons {
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .spacer {
+            flex: 1;
+        }
+
+        .message {
+            margin-top: 14px;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            white-space: pre-line;
+            min-height: 30px;
+            border: 2px inset #e0e0e0;
+            background: #eefaff;
+        }
+
+        .ok {
+            color: blue;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #202020;
+            margin-left: 170px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="app">
+    <div class="title">
+        positional numeral conversion tool [ptnc]
+    </div>
+
+    <div class="row">
+        <label class="main-label">Binary value</label>
+        <input id="binary" type="text">
+        <button onclick="copyText('binary')">Copy</button>
+    </div>
+
+    <div class="row">
+        <label class="main-label">Octal value</label>
+        <input id="octal" type="text">
+        <button onclick="copyText('octal')">Copy</button>
+    </div>
+
+    <div class="row">
+        <label class="main-label">Decimal value</label>
+        <input id="decimal" type="text">
+        <button onclick="copyText('decimal')">Copy</button>
+    </div>
+
+    <div class="row">
+        <label class="main-label">Hex value</label>
+        <input id="hex" type="text">
+        <button onclick="copyText('hex')">Copy</button>
+    </div>
+
+    <div class="option-area">
+        <div class="row">
+            <label class="main-label">Bit width:</label>
+            <input id="bit" class="small-input" type="text">
+            <span style="margin: 0 12px;">/</span>
+            <label style="width:auto;">
+                <input id="separator" type="checkbox">
+                : Digit division
+            </label>
+        </div>
+
+        <div class="row">
+            <label class="main-label">Binary mode:</label>
+
+            <label style="width:auto; margin-right:20px;">
+                <input type="radio" name="mode" value="unsigned" checked onchange="modeChanged()">
+                unsigned
+            </label>
+
+            <label style="width:auto;">
+                <input type="radio" name="mode" value="signed" onchange="modeChanged()">
+                signed / 2's complement
+            </label>
+        </div>
+
+        <div id="mode-note" class="note">
+            unsigned: 指定bit幅の正数として変換します。
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="convert()">Conversion</button>
+        <button onclick="clearAll()">Clear</button>
+        <button onclick="showHelp()">Help</button>
+        <div class="spacer"></div>
+        <button onclick="window.close()">Exit</button>
+    </div>
+
+    <div id="message" class="message"></div>
+</div>
+
+<script>
+    const binary = document.getElementById("binary");
+    const octal = document.getElementById("octal");
+    const decimal = document.getElementById("decimal");
+    const hex = document.getElementById("hex");
+    const bit = document.getElementById("bit");
+    const separator = document.getElementById("separator");
+    const message = document.getElementById("message");
+    const modeNote = document.getElementById("mode-note");
+
+    const valueInputs = [binary, octal, decimal, hex];
+
+    function currentMode() {
+        return document.querySelector('input[name="mode"]:checked').value;
+    }
+
+    function updateInputLock(activeInput) {
+        const hasValue = activeInput.value.length > 0;
+
+        valueInputs.forEach(input => {
+            if (input !== activeInput) {
+                input.readOnly = hasValue;
+                input.classList.toggle("readonly", hasValue);
+            }
+        });
+    }
+
+    function unlockAllInputs() {
+        valueInputs.forEach(input => {
+            input.readOnly = false;
+            input.classList.remove("readonly");
+        });
+    }
+
+    binary.addEventListener("input", () => {
+        binary.value = binary.value.replace(/[^01,]/g, "");
+        updateInputLock(binary);
+        if (binary.value.length === 0) unlockAllInputs();
+    });
+
+    octal.addEventListener("input", () => {
+        octal.value = octal.value.replace(/[^0-7,]/g, "");
+        updateInputLock(octal);
+        if (octal.value.length === 0) unlockAllInputs();
+    });
+
+    decimal.addEventListener("input", () => {
+        decimal.value = decimal.value.replace(/[^0-9-]/g, "");
+        decimal.value = decimal.value.replace(/(?!^)-/g, "");
+        updateInputLock(decimal);
+        if (decimal.value.length === 0) unlockAllInputs();
+    });
+
+    hex.addEventListener("input", () => {
+        hex.value = hex.value.replace(/[^0-9a-fA-F,]/g, "");
+        hex.value = hex.value.toUpperCase();
+        updateInputLock(hex);
+        if (hex.value.length === 0) unlockAllInputs();
+    });
+
+    bit.addEventListener("input", () => {
+        bit.value = bit.value.replace(/[^0-9]/g, "");
+    });
+
+    function modeChanged() {
+        if (currentMode() === "signed") {
+            modeNote.textContent =
+                "signed: 指定bit幅の2の補数表現として変換します。";
+        } else {
+            modeNote.textContent =
+                "unsigned: 指定bit幅の正数として変換します。";
+        }
+    }
+
+    async function convert() {
+        const res = await fetch("/convert", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                binary: binary.value,
+                octal: octal.value,
+                decimal: decimal.value,
+                hex: hex.value,
+                bit: bit.value,
+                separator: separator.checked,
+                mode: currentMode()
+            })
+        });
+
+        const data = await res.json();
+
+        message.textContent = data.message;
+        message.className = "message " + (data.ok ? "ok" : "error");
+
+        if (data.clear) {
+            clearAll(false);
+            return;
+        }
+
+        if (data.ok) {
+            unlockAllInputs();
+
+            binary.value = data.binary;
+            octal.value = data.octal;
+            decimal.value = data.decimal;
+            hex.value = data.hex;
+        }
+    }
+
+    function clearAll(clearMessage = true) {
+        unlockAllInputs();
+
+        binary.value = "";
+        octal.value = "";
+        decimal.value = "";
+        hex.value = "";
+        bit.value = "";
+        separator.checked = false;
+
+        if (clearMessage) {
+            message.textContent = "";
+            message.className = "message";
+        }
+    }
+
+    async function copyText(id) {
+        const value = document.getElementById(id).value;
+
+        try {
+            await navigator.clipboard.writeText(value);
+            message.textContent = "Copied.";
+            message.className = "message ok";
+        } catch {
+            message.textContent = "Copyに失敗しました。";
+            message.className = "message error";
+        }
+    }
+
+    function showHelp() {
+        alert(
+            "name : bdct\n" +
+            "BIN / OCT / DEC / HEX 変換ツール\n\n" +
+            "  Binary value : 2進数\n" +
+            "  Octal value  : 8進数\n" +
+            "  Decimal value: 10進数\n" +
+            "  Hex value    : 16進数\n" +
+            "  Bit width    : 変換bit幅。必須。\n\n" +
+            "  unsigned:\n" +
+            "    指定bit幅の正数として変換\n\n" +
+            "  signed / 2's complement:\n" +
+            "    指定bit幅の2の補数表現として変換"
+        );
+    }
+</script>
+
+</body>
+</html>
