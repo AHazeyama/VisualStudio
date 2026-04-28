@@ -3,10 +3,10 @@
 #-----------------------------------------------------------
 
 # プロジェクト名（画面上部などに表示）
-PROJECT_NAME           = hashgc_tk_VS
+PROJECT_NAME           = hvgc_fa
 
 # プロジェクト概要（任意）
-PROJECT_BRIEF          = "Hash value generation and comparison tool [hashgc]"
+PROJECT_BRIEF          = "hash value generation & comparison tool [hvgc_fa]"
 
 # 出力先（docs/html/index.html が生成される）
 OUTPUT_DIRECTORY       = docs

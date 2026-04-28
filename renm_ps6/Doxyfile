@@ -6,7 +6,7 @@
 PROJECT_NAME           = renm_ps6
 
 # プロジェクト概要（任意）
-PROJECT_BRIEF          = "Batch renaming tool for files and directories [renm_ps6]"
+PROJECT_BRIEF          = "batch renaming tool for files and directories [renm_ps6]"
 
 # 出力先（docs/html/index.html が生成される）
 OUTPUT_DIRECTORY       = docs

@@ -104,7 +104,7 @@ Docker を使用して実行することもできます。
 ## Build
 ![](./image/bash_logo.png)
 ```bash
-docker build -t eashgc .
+docker build -t hvgc_fa .
 ```
 
 <br>

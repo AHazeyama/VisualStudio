@@ -6,7 +6,7 @@
 PROJECT_NAME           = "exrm_wpf"
 
 # プロジェクトの簡単な説明
-PROJECT_BRIEF          = "C# アプリケーションの設計・実装ドキュメント"
+PROJECT_BRIEF          = "exclusive removal tool [exrm_pwf]"
 
 # 出力ディレクトリ
 OUTPUT_DIRECTORY       = docs

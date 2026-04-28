@@ -3,13 +3,13 @@
   <img src="./image/Title_light.png#gh-light-mode-only" alt="banner light">
 </p>
 
-#  positional numeral conversion tool [ptnc]
+#  positional numeral conversion tool [ptnc_flask]
 ![](./image/pnct_flask.png)
 
 <br>
 
 ## Overview
-2進数、8進数、10進数、16進数の相互変換を行うツールです。
+位取り記数法 (2,8,10,16進数) 間の相互変換を行うツールです。
 
 2進数10桁(Excel上限)を超える数値を扱う事が出来ます。  
 単位区切り(SI接頭語)","を挿入する事が出来ます。
@@ -23,7 +23,7 @@
 - 位取り記数法間の相互変換
 - 負数(2進数では2の補数表現)に対応
 - 桁区切り","を挿入可能
-- 2進数の出力桁数を指定可能
+- 2進数の出力桁数を指定可能(先頭"0"詰め)
 - シンプルなUIによる直感的操作
 - エラーハンドリング（未選択・不正入力）
 - メッセージ表示による操作ガイド
@@ -34,27 +34,31 @@
 本ツールは FLASK により Webアプリとして作成されています。
 ### Endpoints
 - `POST /comvert`
-  - 変換数値を各位取り記法(2進数、8進数、10進数、16進数)へ変換
+  - 変換数値を各位取り記法(2,8,10,16進数)へ変換
+- `POST /insert`
+  - 変換数値を各位取り記法(2,8,10,16進数)へ変換
 
 <br>
 
 ## Usage
 1. "Binary","Octal","Decimal","Hex"のいずれかの"value"欄に数値を入力
 2. ｢Conversion｣をクリック
-3. 各"value"に表示された数値を｢Copy｣
+3. 各"value"に表示された数値の｢Copy｣をクリック
 
 <br>
 
 ## Use Case
 - 数値を各位取り記法の数値へ変換
 　(2進数はExcel上限以上の桁に対応)
-- 桁区切り(",")の付加
+- 桁区切り","の付加
+　(Windows｢電卓｣では桁区切りがスペース)
 
 <br>
 
 ## Tech Stack
 - Python 3.x
 - FLASK
+- Jinja2
 
 <br>
 
@@ -75,7 +79,7 @@ pip install -r requirements.txt
 ## Run (Local)
 ![](./image/shell_logo.png)
 ```bash
-uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+python app.py
 ```
 
 <br>
@@ -85,7 +89,7 @@ uvicorn app:app --host 0.0.0.0 --port 8000 --reload
     http://127.0.0.1:5000
 
 * Swagger UI  
-http://localhost:8000/docs
+http://localhost:5000/docs
 
 <br>
 
@@ -97,7 +101,7 @@ Docker を使用して実行することもできます。
 ## Build
 ![](./image/bash_logo.png)
 ```bash
-docker build -t hashgc .
+docker build -t ptnc_flask .
 ```
 
 <br>
@@ -105,20 +109,20 @@ docker build -t hashgc .
 ## Run
 ![](./image/bash_logo.png)
 ```bash
-docker run -p 8000:8000 hashgc
+docker run -p 5000:5000 ptnc_flask
 ```
 
 ## Access
 * Application  
-  http://localhost:8000  
+  http://localhost:5000  
 
 * Swagger UI  
-  http://localhost:8000/docs
+  http://localhost:5000/docs
 
 <br>
 
 ## Deployment Perspective
-本ツールは単体のローカルGUI用途に留まらず、FastAPI による API 化により、以下のような運用を想定しています。  
+本ツールは単体のローカルGUI用途に留まらず、FLASK による API 化により、以下のような運用を想定しています。  
 * ローカル環境での検証ツール
 * 社内向けAPIとしての利用
 * Docker コンテナによる実行環境の統一

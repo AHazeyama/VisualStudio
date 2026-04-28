@@ -3,10 +3,10 @@
 #-----------------------------------------------------------
 
 # プロジェクト名（画面上部などに表示）
-PROJECT_NAME           = renm_tk
+PROJECT_NAME           = ptnc_flask
 
 # プロジェクト概要（任意）
-PROJECT_BRIEF          = "batch renaming tool for files and directories [renm_tk]"
+PROJECT_BRIEF          = "positional numeral conversion tool [ptnc_flask]"
 
 # 出力先（docs/html/index.html が生成される）
 OUTPUT_DIRECTORY       = docs
@@ -26,7 +26,7 @@ INPUT_ENCODING         = UTF-8
 
 # 解析対象：ソース（src）と README を明示
 # 例）project/
-#      ├─ renm_tk.py
+#      ├─ hashgc_tk.py
 #      └─ README.md
 INPUT                  = README.md .
 
@@ -99,8 +99,8 @@ WARN_IF_DOC_ERROR      = YES
 #-----------------------------------------------------------
 
 # 生成物や仮想環境などを除外
-EXCLUDE                = renm_env build dist docs .git
-EXCLUDE_PATTERNS       = renm_env/* venv/* __pycache__/* build/* dist/* docs/*
+EXCLUDE                = hashgc_env build dist docs .git
+EXCLUDE_PATTERNS       = hashgc_env/* venv/* __pycache__/* build/* dist/* docs/*
 
 #-----------------------------------------------------------
 # 任意：トップにロゴを出したい場合（画像を置いたら指定）
