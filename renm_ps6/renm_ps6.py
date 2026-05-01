@@ -41,12 +41,8 @@ class RenmWindow(QMainWindow):
         icon_path = resource_path("renm_ps6.ico")
         self.setWindowIcon(QIcon(icon_path))
 
-
         self.setWindowTitle("batch renaming tool for files and directories [renm_ps6]")
-        self.setFixedSize(980, 520)
-
-#        if Path(icon_path).exists():
-#            self.setWindowIcon(QIcon(icon_path))
+        self.setFixedSize(780, 600)
 
         self.current_backup_dir = ""
         self._build_ui()
@@ -83,6 +79,7 @@ class RenmWindow(QMainWindow):
         row1.addWidget(self.exec_dir_entry, 1)
 
         self.select_button = self._make_button("Select")
+        self.select_button.setObjectName("subButton")
         self.select_button.clicked.connect(self.select_click)
         row1.addWidget(self.select_button)
 
@@ -110,9 +107,12 @@ class RenmWindow(QMainWindow):
         row3 = QHBoxLayout()
         row3.setSpacing(8)
         layout.addLayout(row3)
-
-        self.rec_chk = QCheckBox("Recursive processing")
+        # 1. 初期状態のテキストに絵文字を付ける
+        self.rec_chk = QCheckBox("✅ Recursive processing")
         self.rec_chk.setChecked(True)
+        # 2. チェック状態が変わった時に絵文字を切り替える設定
+        self.rec_chk.stateChanged.connect(self._update_checkbox_icon)
+        # レイアウトへの追加
         row3.addWidget(self.rec_chk)
         row3.addStretch(1)
 
@@ -137,25 +137,35 @@ class RenmWindow(QMainWindow):
         row5.setSpacing(8)
         layout.addLayout(row5)
 
-        self.move_button = self._make_button("Move")
+        self.scan_button = self._make_button("Scan")
+        self.scan_button.setObjectName("scanButton")
+        self.scan_button.clicked.connect(self.scan_click)
+        row5.insertWidget(0, self.scan_button)
+
+        self.move_button = self._make_button("Rename")
+        self.move_button.setObjectName("executeButton")
         self.move_button.clicked.connect(self.move_click)
         row5.addWidget(self.move_button)
 
-        self.clear_button = self._make_button("Clear")
-        self.clear_button.clicked.connect(self.clear_click)
-        row5.addWidget(self.clear_button)
-
         self.undo_button = self._make_button("Undo")
+        self.undo_button.setObjectName("undoButton")
         self.undo_button.clicked.connect(self.undo_click)
         row5.addWidget(self.undo_button)
 
+        self.clear_button = self._make_button("Clear")
+        self.clear_button.setObjectName("subButton")
+        self.clear_button.clicked.connect(self.clear_click)
+        row5.addWidget(self.clear_button)
+
         self.help_button = self._make_button("Help")
+        self.help_button.setObjectName("subButton")
         self.help_button.clicked.connect(self.help_click)
         row5.addWidget(self.help_button)
 
         row5.addStretch(1)
 
         self.exit_button = self._make_button("Exit")
+        self.exit_button.setObjectName("exitButton")
         self.exit_button.clicked.connect(self.exit_click)
         row5.addWidget(self.exit_button)
 
@@ -185,18 +195,75 @@ class RenmWindow(QMainWindow):
                 font-family: Consolas, 'Courier New', monospace;
                 font-size: 11pt;
             }
+
             QPushButton {
                 min-width: 82px;
                 min-height: 28px;
-                color: snow;
-                border: 1px solid gray;
-                border-radius: 2px;
-                background-color: qlineargradient(
-                    x1: 0, y1: 0, x2: 0, y2: 1,
-                    stop: 0 #f5f5f5,
-                    stop: 1 #696969
+                border: 1px solid #666;
+                border-radius: 3px;
+                font-weight: 600;
+            }
+            
+            /* Scan（シアン） */
+            QPushButton#scanButton {
+                color: white;
+                background: qlineargradient(
+                    x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #CCFFFF,
+                    stop:1 #00A6D6
                 );
             }
+            
+            /* Execute（Rename / Delete）（赤） */
+            QPushButton#executeButton {
+                color: white;
+                background: qlineargradient(
+                    x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #FFCCFF,
+                    stop:1 #FF0066
+                );
+            }
+            
+            /* Undo（黄色） */
+            QPushButton#undoButton {
+                color: #222;
+                background: qlineargradient(
+                    x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #FFFFCC,
+                    stop:1 #FBC02D
+                );
+            }
+            
+            /* Exit（黒） */
+            QPushButton#exitButton {
+                color: white;
+                background: qlineargradient(
+                    x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #CCCCCC,
+                    stop:1 #000000
+                );
+            }
+            
+            /* その他（灰色） */
+            QPushButton#subButton {
+                color: #222;
+                background: qlineargradient(
+                    x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #CCCCCC,
+                    stop:1 #5F5F5F
+                );
+            }
+            
+            QPushButton:hover {
+                border: 1px solid #333;
+            }
+            
+            QPushButton:pressed {
+                padding-top: 1px;
+                padding-left: 1px;
+            }
+
+
             QPushButton:hover {
                 border: 1px solid #404040;
             }
@@ -207,8 +274,23 @@ class RenmWindow(QMainWindow):
             QCheckBox {
                 spacing: 6px;
             }
+            QCheckBox::indicator {
+                width: 0px;  /* 元のチェックボックスを消す */
+                border: none;
+            }
+            QCheckBox {
+                spacing: 0px; /* 絵文字と文字の間隔はテキスト内で調整 */
+            }
+
             """
         )
+
+    def _update_checkbox_icon(self, state):
+        base_text = "Recursive processing"
+        if state == 2: # Qt.CheckState.Checked
+            self.rec_chk.setText(f"✅ {base_text}")
+        else:
+            self.rec_chk.setText(f"🟩{base_text}")
 
     def _make_button(self, text: str) -> QPushButton:
         button = QPushButton(text)
@@ -231,6 +313,25 @@ class RenmWindow(QMainWindow):
         self.clear_message()
         for line in lines:
             self.append_message(line + "\n")
+
+    def scan_click(self) -> None:
+        self.clear_message()
+        selected_dir = self.exec_dir_entry.text().strip()
+    
+        if not selected_dir:
+            self.append_message("'Exec directory' を指定して下さい。\n")
+            return
+    
+        if not os.path.isdir(selected_dir):
+            self.append_message("指定されたディレクトリが存在しません。\n")
+            return
+    
+        try:
+            entries = sorted(os.listdir(selected_dir))
+            for name in entries:
+                self.append_message(name + "\n")
+        except Exception as exc:
+            self.append_message(f"フォルダ内容の取得に失敗しました: {exc}\n")
 
     def select_click(self) -> None:
         ini_dir = str(Path.home())

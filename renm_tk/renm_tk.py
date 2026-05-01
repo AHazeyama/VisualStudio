@@ -39,14 +39,16 @@ def select_click(event):
 	exec_dir_entry.delete(0, END)
 	ini_dir = expanduser("~")
 	ret = filedialog.askdirectory(initialdir=ini_dir, title='dir choose', mustexist = True)
+	exec_dir_entry.insert(0, ret)
 	msg.config(state="normal")
 	msg.delete(1.0, END)
 	# フォルダが選ばれたら、その中身を表示
 	if ret:
-		files = os.listdir(ret)
-		for name in files:
-			name += '\n'
-			msg.insert(tk.END, name, "info")
+##		files = os.listdir(ret)
+##		for name in files:
+##			name += '\n'
+##			msg.insert(tk.END, name, "info")
+		msg.insert(tk.END, "Scanボタンで内容を確認してください。", "info")
 	else:
 		msg.insert(tk.END, "フォルダが選択されませんでした。", "info")
 	msg.config(state="disabled")
@@ -54,8 +56,26 @@ def select_click(event):
 	if os.path.isdir(undo_dir):							# BuckUpが存在
 		shutil.rmtree(undo_dir)							# BuckUpを削除
 	shutil.copytree(ret, undo_dir)						# 作業DIRをBuckUp
-	exec_dir_entry.insert(0, ret)
 	exec_dir_entry.config(state="readonly")
+
+
+# Scanクリック
+def scan_click(event):
+
+	msg.config(state="normal")
+	msg.delete(1.0, END)
+	exec_dir_entry.config(state="normal")
+	exec_dir = exec_dir_entry.get()
+	if exec_dir:
+		files = os.listdir(exec_dir)
+		for name in files:
+			name += '\n'
+			msg.insert(tk.END, name, "info")
+	else:
+		msg.insert(tk.END, exec_dir, "info")
+		msg.delete(1.0, END)
+		msg.insert(tk.END, "ディレクトリが認識できません。", "info")
+	msg.config(state="disabled")
 
 
 # Checkbuttonクリック
@@ -188,11 +208,19 @@ def dwndir(bfr_wd, aft_wd, sps):
 
 
 # 終了処理(常に正常終了)
+#	def exit_click(event=None):
 def exit_click(event):
 	undo_dir = exec_dir_entry.get() + ".bk"
-	if os.path.isdir(undo_dir):						# BuckUpが存在
-		shutil.rmtree(undo_dir)						# BuckUpを削除
-	sys.exit(0)
+	if os.path.isdir(undo_dir):
+		msg.insert(tk.END, undo_dir, "info")
+    
+	try:
+		if undo_dir != ".bk" and os.path.isdir(undo_dir):
+			shutil.rmtree(undo_dir)
+	except Exception as exc:
+		messagebox.showwarning("Exit", f"バックアップ削除に失敗しました。\n{exc}")
+    
+	root.destroy()
 
 
 if __name__ == '__main__':
@@ -234,26 +262,28 @@ if __name__ == '__main__':
 	os_name = platform.system()
 	if os_name == "Windows":
 		label_wid = 13								# 説明文
-		entry_wid = 56								# 入力欄
+		place_wid = 56								# 入力欄
+		entry_wid = 66								# 入力欄
 		text_wid =  72								# メッセージエリア
-		dummy_wid = 29								# ボタン位置調整用ダミー
+		dummy_wid = 18								# ボタン位置調整用ダミー
 	else:
 		label_wid = 13
-		entry_wid = 57
+		place_wid = 56
+		entry_wid = 66
 		text_wid =  63
 		dummy_wid = 33
 	# Button設定
 	font_x = 40
 	font_y = 12
-	font_col = "snow"
-	font_knd = "TkDefaultFont"
-	font_siz = 12
+	font_knd = "Arial"
+	font_siz = 11
 	canvas_wid = 81
+#	canvas_wid = 70
 	canvas_hgt = 27
 	grad_wid = canvas_wid - 1
 	grad_hgt = canvas_hgt - 2
 	grad_size = [grad_wid, grad_hgt]
-	grad_col = ["69","69","69", "F5","F5","F5"]
+#	grad_col = ["69","69","69", "F5","F5","F5"]
 	line_col = "gray70"
 	back_col = "gray20"
 	
@@ -282,15 +312,17 @@ if __name__ == '__main__':
 		frame1, 
 		font=(default_font),
 		textvariable=exec_dir, 
-		width=entry_wid )
+		width=place_wid )
 	exec_dir_entry.pack(side=LEFT)
 	exec_dir_entry.config(state="readonly")
 
 	# Directory Select Button
 	canvas1 = tk.Canvas(frame1, width=canvas_wid, height=canvas_hgt, highlightthickness=0)
 	canvas1.create_rectangle(0, 0, grad_wid, canvas_hgt, fill=line_col, outline=line_col)
-	canvas1.pack(side="left", padx=6)
+	canvas1.pack(side="left", padx=7)
+	grad_col = ["CC","CC","CC", "5F","5F","5F"]
 	grad_draw(canvas1, grad_col, grad_size)
+	font_col = "black"
 	canvas1.create_text(font_x, font_y, text="Select", fill=font_col, font=(font_knd, font_siz))
 	canvas1.bind("<Button-1>", select_click)			# クリックイベントをバインド
 	
@@ -385,46 +417,65 @@ if __name__ == '__main__':
 
 	frame5 = ttk.Frame(frame0, padding=(0, 5), style="Custom.TFrame")
 	frame5.grid(row=4, column=0, sticky=W)
-#- Check Button -----------------------------------------------
+#- Scan Button ------------------------------------------------
+	canvas4_0 = tk.Canvas(frame5, width=canvas_wid, height=canvas_hgt, highlightthickness=0)
+	canvas4_0.create_rectangle(0, 0, grad_wid, canvas_hgt, fill=line_col, outline=line_col)
+	canvas4_0.pack(side="left", padx=7)
+	font_col = "snow"
+	grad_col = ["CC","FF","FF", "00","AB","D6"]
+	grad_draw(canvas4_0, grad_col, grad_size)
+	canvas4_0.create_text(font_x, font_y, text="Scan", fill=font_col, font=(font_knd, font_siz))
+	canvas4_0.bind("<Button-1>", scan_click)		# クリックイベントをバインド
+#- Move Button ------------------------------------------------
 	canvas4_1 = tk.Canvas(frame5, width=canvas_wid, height=canvas_hgt, highlightthickness=0)
 	canvas4_1.create_rectangle(0, 0, grad_wid, canvas_hgt, fill=line_col, outline=line_col)
-	canvas4_1.pack(side="left", padx=6)
+	canvas4_1.pack(side="left", padx=7)
+	font_col = "snow"
+	grad_col = ["FF","CC","FF", "FF","00","66"]
 	grad_draw(canvas4_1, grad_col, grad_size)
 	canvas4_1.create_text(font_x, font_y, text="Move", fill=font_col, font=(font_knd, font_siz))
 	canvas4_1.bind("<Button-1>", move_click)		# クリックイベントをバインド
-#- Clear Button -----------------------------------------------
+#- Undo Button -----------------------------------------------
 	canvas4_2 = tk.Canvas(frame5, width=canvas_wid, height=canvas_hgt, highlightthickness=0)
 	canvas4_2.create_rectangle(0, 0, grad_wid, canvas_hgt, fill=line_col, outline=line_col)
-	canvas4_2.pack(side="left", padx=6)
+	canvas4_2.pack(side="left", padx=7)
+	font_col = "black"
+	grad_col = ["FF","FF","FF", "FB","C0","2D"]
 	grad_draw(canvas4_2, grad_col, grad_size)
-	canvas4_2.create_text(font_x, font_y, text="Clear", fill=font_col, font=(font_knd, font_siz))
-	canvas4_2.bind("<Button-1>", clear_click)		# クリックイベントをバインド
-#- Undo Button -----------------------------------------------
+	canvas4_2.create_text(font_x, font_y, text="Undo", fill=font_col, font=(font_knd, font_siz))
+	canvas4_2.bind("<Button-1>", undo_click)		# クリックイベントをバインド
+#- Clear Button -----------------------------------------------
 	canvas4_3 = tk.Canvas(frame5, width=canvas_wid, height=canvas_hgt, highlightthickness=0)
 	canvas4_3.create_rectangle(0, 0, grad_wid, canvas_hgt, fill=line_col, outline=line_col)
-	canvas4_3.pack(side="left", padx=6)
+	canvas4_3.pack(side="left", padx=7)
+	font_col = "black"
+	grad_col = ["CC","CC","CC", "5F","5F","5F"]
 	grad_draw(canvas4_3, grad_col, grad_size)
-	canvas4_3.create_text(font_x, font_y, text="Undo", fill=font_col, font=(font_knd, font_siz))
-	canvas4_3.bind("<Button-1>", undo_click)		# クリックイベントをバインド
-#- Clear Button -----------------------------------------------
+	canvas4_3.create_text(font_x, font_y, text="Clear", fill=font_col, font=(font_knd, font_siz))
+	canvas4_3.bind("<Button-1>", clear_click)		# クリックイベントをバインド
+#- Help Button ------------------------------------------------
 	canvas4_4 = tk.Canvas(frame5, width=canvas_wid, height=canvas_hgt, highlightthickness=0)
 	canvas4_4.create_rectangle(0, 0, grad_wid, canvas_hgt, fill=line_col, outline=line_col)
-	canvas4_4.pack(side="left", padx=6)
+	canvas4_4.pack(side="left", padx=7)
+	grad_col = ["CC","CC","CC", "5F","5F","5F"]
+	font_col = "black"
 	grad_draw(canvas4_4, grad_col, grad_size)
 	canvas4_4.create_text(font_x, font_y, text="Help", fill=font_col, font=(font_knd, font_siz))
 	canvas4_4.bind("<Button-1>", help_click)		# クリックイベントをバインド
 #- Button 5 -------------------------------------------------	
 	label5 = ttk.Label(frame5, text='', width=dummy_wid, padding=(5, 2), style="Custom.TLabel")
 	label5.pack(side="left")
-#- Clear Button -----------------------------------------------
+#- Exit Button ------------------------------------------------
 	canvas6 = tk.Canvas(frame5, width=canvas_wid, height=canvas_hgt, highlightthickness=0)
 	canvas6.create_rectangle(0, 0, grad_wid, canvas_hgt, fill=line_col, outline=line_col)
-	canvas6.pack(side="left", padx=6)
+	canvas6.pack(side="left", padx=7)
+	font_col = "snow"
+	grad_col = ["CC","CC","CC", "11","11","11"]
 	grad_draw(canvas6, grad_col, grad_size)
 	canvas6.create_text(font_x, font_y, text="Exit", fill=font_col, font=(font_knd, font_siz))
 	canvas6.bind("<Button-1>", exit_click)			# クリックイベントをバインド
 
 	root.attributes("-topmost", True)				# ウィンドウを最前面へ(この段階では最前面固定)
 	root.attributes("-topmost", False)				# ウィンドウを固定解除、最前面は維持
+	root.protocol("WM_DELETE_WINDOW", exit_click)
 	root.mainloop()
-

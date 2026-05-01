@@ -6,12 +6,16 @@ New-Item test_11.txt
 New-Item test_12.txt
 New-Item work_11.txt
 New-Item work_12.txt
+New-Item dummy_11.txt
+New-Item dummy_12.txt
 mkdir test2nd
 cd test2nd
 New-Item test_21.txt
 New-Item test_22.csv
 New-Item work_21.txt
 New-Item work_22.csv
+New-Item dummy_11.txt
+New-Item dummy_12.txt
 cd ..
 mkdir test3rd
 cd test3rd
@@ -19,6 +23,8 @@ New-Item test_31.txt
 New-Item test_32.csv
 New-Item work_31.txt
 New-Item work_32.csv
+New-Item dummy_11.txt
+New-Item dummy_12.txt
 cd ..
 mkdir work4th
 cd work4th

@@ -1,0 +1,12 @@
+Version: 2.0.0.0
+CompanyName: a_haze
+FileDescription: アプリケーション
+InternalName: renm_tk.exe
+LegalCopyright:
+OriginalFilename: renm_tk.py
+ProductName: renm_tk
+Translation:
+  - langID: 0
+    charsetID: 1200
+  - langID: 1041
+    charsetID: 1200

@@ -1,7 +1,7 @@
 ﻿// _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 // _/ Name      : exrm
 // _/ InterFace : Windows Presentation Foundation (WPF)
-// _/ Function  : Exclusive remove tool
+// _/ Function  : exclusive remove tool
 // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 using System;
 using System.Collections.Generic;

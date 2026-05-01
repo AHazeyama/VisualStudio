@@ -16,6 +16,7 @@
       <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
       <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
       <ApplicationIcon>exrm.ico</ApplicationIcon>
+      <FileVersion>2.0.0.0</FileVersion>
     </PropertyGroup>
 
   <ItemGroup>

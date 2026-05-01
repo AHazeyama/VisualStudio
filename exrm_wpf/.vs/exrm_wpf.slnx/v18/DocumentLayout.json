@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|c:\\users\\atsus\\bin\\public\\exrm_wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|c:\\users\\atsus\\bin\\public\\exrm_wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|c:\\users\\atsus\\bin\\public\\exrm_wpf\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|solutionrelative:assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|c:\\users\\atsus\\bin\\public\\exrm_wpf\\exrm_wpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|solutionrelative:exrm_wpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|c:\\users\\atsus\\bin\\public\\exrm_wpf\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|solutionrelative:themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|c:\\users\\atsus\\bin\\public\\exrm_wpf\\exrmcore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|solutionrelative:exrmcore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|c:\\users\\atsus\\bin\\public\\exrm_wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|c:\\users\\atsus\\bin\\public\\exrm_wpf\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEAB0FF3-D87C-80DA-62F4-849ED8897F96}|exrm_wpf.csproj|solutionrelative:assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,23 +34,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-27T19:50:53.717Z",
+              "WhenOpened": "2026-04-30T04:17:18.197Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAGIBAAAAAAAAAAAAAHwBAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T19:49:53.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "exrm_wpf.csproj",
+              "DocumentMoniker": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\exrm_wpf.csproj",
+              "RelativeDocumentMoniker": "exrm_wpf.csproj",
+              "ToolTip": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\exrm_wpf.csproj",
+              "RelativeToolTip": "exrm_wpf.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-30T16:55:13.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Theme.xaml",
+              "DocumentMoniker": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\Themes\\Theme.xaml",
+              "RelativeDocumentMoniker": "Themes\\Theme.xaml",
+              "ToolTip": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\Themes\\Theme.xaml",
+              "RelativeToolTip": "Themes\\Theme.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-30T13:44:03.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "AssemblyInfo.cs",
@@ -54,27 +107,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ExrmCore.cs",
               "DocumentMoniker": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\ExrmCore.cs",
               "RelativeDocumentMoniker": "ExrmCore.cs",
               "ToolTip": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\ExrmCore.cs",
               "RelativeToolTip": "ExrmCore.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAUwIoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-27T19:50:10.264Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\atsus\\bin\\public\\exrm_wpf\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T19:49:53.183Z"
             }
           ]
         },
@@ -88,21 +129,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }

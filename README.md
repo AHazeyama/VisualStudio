@@ -4,13 +4,11 @@
 </p>
 
 # Overview
-### 業務効率化および運用改善を目的としたツール群。
-
-ファイル操作や整合性検証といった反復作業を対象に、  
-　* デスクトップアプリケーション ( **C#** [ **WPF** ] / **Python** [ **PySide6** / **Tkinter** ] )  
-および  
-　* Web (API / アプリケーション) ( **Python** [ **FastAPI** / **FLASK**] )  
-として実装しています。
+## 業務効率化および運用改善を目的としたツール群。
+本ツール群は以下の設計思想で構築しています：  
+・操作の一貫性（Scan / Execute / Undo / Clear / Exit）  
+・UI配色の統一（機能ごとの色ルール）  
+・複数フレームワーク間での設計共通化  
 
 単なる機能実装に留まらず、実運用を想定し、操作性・安全性・再現性を重視した設計としています。
 
@@ -22,9 +20,9 @@
 | [exrm_wpf](https://github.com/AHazeyama/public/tree/main/exrm_wpf) | C# / WPF によるファイル操作ツール | Windows |
 | [renm_ps6](https://github.com/AHazeyama/public/tree/main/renm_ps6) | Python / PySide6 によるファイル一括リネームツール | Windows & Linux(Ubuntu) |
 | [renm_tk](https://github.com/AHazeyama/public/tree/main/renm_tk) | Python / Tkinter によるファイル一括リネームツール | Windows & Linux(Ubuntu) |
-| [hvgc_fa](https://github.com/AHazeyama/public/tree/main/hvcg_fa) | Python / FastAPI によるsumcheck(Hash値)検証ツール | Web |
+| [hvgc_fa](https://github.com/AHazeyama/public/tree/main/hvcg_fa) | Python / FastAPI によるsumcheck(Hash値)ツール | Web |
 | [ptnc_flask](https://github.com/AHazeyama/public/tree/main/ptnc_flask) | Python / FLASK による位取り記数法 (2,8,10,16進数) 間相互変換ツール | Web |
-
+| Graduation.xlsm | 各ツール間のUI統一用グラデーション確認ツール<hr>(ボタンの配色確認用に作成)| Windows |
 <br>
 
 # Download the Release 

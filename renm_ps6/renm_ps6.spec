@@ -42,5 +42,6 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    version='renm_ps6.version',
     icon=['renm_ps6.ico'],
 )
