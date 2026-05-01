@@ -22,7 +22,7 @@
 | [renm_tk](https://github.com/AHazeyama/public/tree/main/renm_tk) | Python / Tkinter によるファイル一括リネームツール | Windows & Linux(Ubuntu) |
 | [hvgc_fa](https://github.com/AHazeyama/public/tree/main/hvcg_fa) | Python / FastAPI によるsumcheck(Hash値)ツール | Web |
 | [ptnc_flask](https://github.com/AHazeyama/public/tree/main/ptnc_flask) | Python / FLASK による位取り記数法 (2,8,10,16進数) 間相互変換ツール | Web |
-| Gradient.xlsm | 各ツール間のGUI統一用グラディエント確認ツール<hr> <font size="1">(ボタンの配色確認用に作成。　⚠️マクロが含まれています ⇒ 実行する場合はファイルを右を️クリックして、プロパティのセキュリティを許可してください。)| Windows |
+| Gradient.xlsm | 各ツール間のGUI統一用グラディエント確認ツール<br> (ボタンの配色確認用に作成。　<font size="1">⚠️マクロが含まれています ⇒ 実行する場合はファイルを右を️クリックして、プロパティのセキュリティを許可してください。</font>)| Windows |
 <br>
 
 # Download the Release 
