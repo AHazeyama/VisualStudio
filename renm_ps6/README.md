@@ -5,7 +5,7 @@
 
 # batch renaming tool for files and directories [renm_ps6]
 <p align="center">
-  <img src="./image/renm00.png" width="720">
+  <img src="./image/renm_ps6.png" width="720">
 </p>
 
 <br>
