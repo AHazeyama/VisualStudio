@@ -17,12 +17,12 @@
 # Tool Description
 | Item | Description | Platform |
 |:--|:--|:--|
-| [exrm_wpf](https://github.com/AHazeyama/public/tree/main/exrm_wpf) | C# / WPF によるファイル操作ツール | Windows |
-| [renm_ps6](https://github.com/AHazeyama/public/tree/main/renm_ps6) | Python / PySide6 によるファイル一括リネームツール | Windows & Linux(Ubuntu) |
-| [renm_tk](https://github.com/AHazeyama/public/tree/main/renm_tk) | Python / Tkinter によるファイル一括リネームツール | Windows & Linux(Ubuntu) |
-| [hvgc_fa](https://github.com/AHazeyama/public/tree/main/hvcg_fa) | Python / FastAPI によるsumcheck(Hash値)ツール | Web |
-| [ptnc_flask](https://github.com/AHazeyama/public/tree/main/ptnc_flask) | Python / FLASK による位取り記数法 (2,8,10,16進数) 間相互変換ツール | Web |
-| Gradient.xlsm | 各ツール間のGUI統一用グラディエント確認ツール<br> ・ボタンの配色確認用に作成。　<br>・⚠️マクロが含まれています ⇒ 実行する場合はファイルを右を️クリックして、プロパティのセキュリティを許可してください。)| Windows |
+| [exrm_wpf](https://github.com/AHazeyama/public/tree/main/exrm_wpf) | **C#** / **WPF** によるファイル操作ツール | Windows |
+| [renm_ps6](https://github.com/AHazeyama/public/tree/main/renm_ps6) | **Python** / **PySide6** によるファイル一括リネームツール | Windows & Linux(Ubuntu) |
+| [renm_tk](https://github.com/AHazeyama/public/tree/main/renm_tk) | **Python** / **Tkinter** によるファイル一括リネームツール | Windows & Linux(Ubuntu) |
+| [hvgc_fa](https://github.com/AHazeyama/public/tree/main/hvcg_fa) | **Python** / **FastAPI** によるsumcheck(Hash値)ツール | Web |
+| [ptnc_flask](https://github.com/AHazeyama/public/tree/main/ptnc_flask) | **Python** / **FLASK** による位取り記数法 (2,8,10,16進数) 間相互変換ツール | Web |
+| Gradient | 各ツール間のGUI統一用グラディエント確認ツール<br> ・ボタンの配色確認用に作成。　<br>・⚠️マクロが含まれています ⇒ 実行する場合はファイルを右を️クリックして、プロパティのセキュリティを許可してください。)| Windows / Excel(.xlms) |
 <br>
 
 # Download the Release 
