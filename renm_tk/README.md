@@ -4,7 +4,7 @@
 </p>
 
 # batch renaming tool for files and directories [renm_tk]
-<p align="center">
+<p align="left">
   <img src="./image/renm_tk.png" width="720">
 </p>
 
