@@ -9,7 +9,7 @@
 <br>
 
 ## Overview
-位取り記数法 (2,8,10,16進数) 間の相互変換を行うツールです。
+位取り記数法 (**2,8,10,16進数**) 変換を行うツールです。
 
 2進数10桁(Excel上限)を超える数値を扱う事が出来ます。  
 単位区切り(SI接頭語)","を挿入する事が出来ます。
@@ -20,9 +20,9 @@
 <br>
 
 ## Features
-- 位取り記数法間の相互変換
+- 位取り記数法 (**2,8,10,16進数**) 変換
 - 負数(2進数では2の補数表現)に対応
-- 桁区切り","を挿入可能
+- 桁区切り"**,**"を挿入可能
 - 2進数の出力桁数を指定可能(先頭"0"詰め)
 - シンプルなUIによる直感的操作
 - エラーハンドリング（未選択・不正入力）
@@ -31,18 +31,18 @@
 <br>
 
 ## Frame work (FLASK)
-本ツールは FLASK により Webアプリとして作成されています。
+本ツールは **FLASK** により Webアプリとして作成されています。
 ### Endpoints
 - `POST /comvert`
-  - 変換数値を各位取り記法(2,8,10,16進数)へ変換
+  - 変換数値を各位取り記法(**2,8,10,16進数**)へ変換
 - `POST /insert`
-  - 変換数値を各位取り記法(2,8,10,16進数)へ変換
+  - 変換数値を各位取り記法(**2,8,10,16進数**)へ変換
 
 <br>
 
 ## Usage
-1. "Binary","Octal","Decimal","Hex"のいずれかの"value"欄に数値を入力
-2. ｢Conversion｣をクリック
+1. "**Binary**"**,**"**Octal**"**,**"**Decimal**"**,**"**Hex**"のいずれかの**"**value**"**欄に数値を入力
+2. ｢**Conversion**｣をクリック
 3. 各"value"に表示された数値の｢Copy｣をクリック
 
 <br>
@@ -69,7 +69,11 @@
 <br>
 
 ## Install
-![](./image/shell_logo.png)
+<p align="left">
+  <img src="./image/shell_logo_dark.png#gh-dark-mode-only" alt="renm banner dark">
+  <img src="./image/shell_logo_light.png#gh-light-mode-only" alt="renm banner light">
+</p>
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -77,7 +81,11 @@ pip install -r requirements.txt
 <br>
 
 ## Run (Local)
-![](./image/shell_logo.png)
+<p align="left">
+  <img src="./image/shell_logo_dark.png#gh-dark-mode-only" alt="renm banner dark">
+  <img src="./image/shell_logo_light.png#gh-light-mode-only" alt="renm banner light">
+</p>
+
 ```bash
 python app.py
 ```

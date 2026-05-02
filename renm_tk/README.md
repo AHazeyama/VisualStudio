@@ -28,18 +28,19 @@
 * サブディレクトリを含めた再帰処理
 * 処理内容のリアルタイム表示
 * Undoによる安全な復元
-* 標準ライブラリによる軽量アプリケーション(Tkinter)
+* 標準ライブラリによる軽量アプリケーション(**Tkinter**)
 * 単体exeで実行可能（Windows）
 * Windows / Linux でのCLI実行
 
 <br>
 
 ## Usage
-1. **Exec directory** を選択
+1. ｢**Select**｣ をクリックし、**Exec directory** を選択
 2. **Before word** に変換前文字列（正規表現可）を入力
 3. **After word** に変換後文字列を入力
-4. **Move** をクリックして実行
-5. 必要に応じて **Undo** で元に戻す
+3. ｢**Scan**｣ をクリックし、**Processing message** に表示される内容を確認
+4. ｢**Rename**｣ をクリックして実行
+5. 必要に応じて ｢**Undo**｣ で元に戻す
 
 <br>
 
@@ -106,15 +107,20 @@
 <br>
 
 ## Build (for developers) 
-![](./image/shell_logo.png)
-```bash
-pyinstaller ^
-  --noconsole ^
-  --onefile ^
-  --icon=renm_tk.ico ^
-  --add-data "renm_tk.ico;." ^
-  renm_tk.py
-```
+<p align="left">
+  <img src="./image/shell_logo_dark.png#gh-dark-mode-only" alt="renm banner dark">
+  <img src="./image/shell_logo_light.png#gh-light-mode-only" alt="renm banner light">
+</p>
+
+```bash  
+pyinstaller ^  
+  --noconsole ^  
+  --onefile ^  
+  --icon=renm_tk.ico ^  
+  --add-data "renm_tk.ico;." ^  
+  --version-file=renm_tk.version ^  
+  renm_tk.py  
+```  
 
 <br>
 

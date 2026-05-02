@@ -9,21 +9,22 @@
 <br>
 
 ## Overview
-ファイルの整合性確認（チェックサム検証）を手作業で行う際の手間とミスを削減するために開発したツールです。  
+ファイルの整合性確認（**Checksum検証**）を手作業で行う際の手間とミスを削減するために開発したツールです。  
 
 複数のハッシュアルゴリズムに対応し、生成結果と期待値の比較をワンステップで実行可能です。  
 業務における検証作業の効率化およびヒューマンエラー防止を目的としています。
 
-また、FastAPI により API 化することで、ローカル利用に加えて  
+また、**FastAPI** により API 化することで、ローカル利用に加えて  
 将来的な自動化処理やクラウド環境での利用も視野に入れた構成としています。
 
 <br>
 
 ## Features
 - ファイルからハッシュ値を生成
-- 期待値との比較（Match / Discrepancy 表示）
+- 期待値との比較（**Match** / **Discrepancy** 表示）
+- ｢**Select**｣による選択、または Drag & Dropによるチェック対象の転送（Upload）
 - 複数アルゴリズム対応  
-  - MD5 / SHA-1 / SHA-256 / SHA-512 / BLAKE2
+  - **MD5** / **SHA-1** / **SHA-256** / **SHA-512** / **BLAKE2**
 - クリップボードから期待値を貼り付け（Paste）
 - シンプルなUIによる直感的操作
 - エラーハンドリング（未選択・不正入力）
@@ -32,7 +33,7 @@
 <br>
 
 ## API (FastAPI)
-本ツールは FastAPI により API 化されています。
+本ツールは **FastAPI** により API 化されています。
 ### Endpoints
 - `POST /hash`
   - ファイルをアップロードしてハッシュ値を生成
@@ -42,11 +43,11 @@
 <br>
 
 ## Usage
-1. 「Select」で対象ファイルを選択  
+1. 「**Select**」で対象ファイルを選択  
    またはドラッグ&ドロップでアップロード  
 2. ハッシュアルゴリズムを選択  
 3. 期待値を貼り付け（任意）  
-4. 「Check」をクリック  
+4. 「**Check**」をクリック  
 
 <br>
 
@@ -72,15 +73,23 @@
 <br>
 
 ## Install
-![](./image/shell_logo.png)
+<p align="left">
+  <img src="./image/shell_logo_dark.png#gh-dark-mode-only" alt="renm banner dark">
+  <img src="./image/shell_logo_light.png#gh-light-mode-only" alt="renm banner light">
+</p>
+
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt  
 ```
 
 <br>
 
 ## Run (Local)
-![](./image/shell_logo.png)
+<p align="left">
+  <img src="./image/shell_logo_dark.png#gh-dark-mode-only" alt="renm banner dark">
+  <img src="./image/shell_logo_light.png#gh-light-mode-only" alt="renm banner light">
+</p>
+
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 ```
@@ -125,7 +134,7 @@ docker run -p 8000:8000 hvgc_fa
 <br>
 
 ## Deployment Perspective
-本ツールは単体のローカルGUI用途に留まらず、FastAPI による API 化により、以下のような運用を想定しています。  
+本ツールは単体のローカルGUI用途に留まらず、**FastAPI** による API 化により、以下のような運用を想定しています。  
 * ローカル環境での検証ツール
 * 社内向けAPIとしての利用
 * Docker コンテナによる実行環境の統一
