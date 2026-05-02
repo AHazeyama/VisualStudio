@@ -28,7 +28,6 @@
 	<img src="./image/Caution_light.png#gh-light-mode-only" alt="banner light">
 </p>
 <br>
-<br>
 
 # Download the Release 
 🔗 https://github.com/AHazeyama/public/releases/latest  
